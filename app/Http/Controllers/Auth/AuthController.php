@@ -9,7 +9,9 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     
-    // @return View
+    /**
+     * @return View
+     */ 
     public function showLogin()
     {
         return view('login.login_form');
@@ -17,7 +19,7 @@ class AuthController extends Controller
 
     /**
      * @param App\Http\Requests\LoginFormRequest;
-     * $request
+     $request
      */
     public function login(LoginFormRequest $request)
     {

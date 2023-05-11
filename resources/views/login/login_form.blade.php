@@ -15,10 +15,23 @@
 <form class="form-signin text-center" method="POST" action="{{ route('login') }}">
   @csrf
   <h1 class="h3 mb-3 font-weight-normal">ログインフォーム</h1>
-  <label for="inputEmail" class="sr-only" name="email"></label>
-  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-  <label for="inputPassword" class="sr-only" name="password"></label>
-  <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul class="mb-0">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+  <label for="inputEmail" class="sr-only"></label>
+  <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" autofocus>
+
+  <label for="inputPassword" class="sr-only"></label>
+  <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password">
+
   <button class="btn btn-lg btn-primary btn-block w-100" type="submit">ログイン</button>
 </form>
 
