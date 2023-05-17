@@ -16,7 +16,7 @@
   @csrf
   <h1 class="h3 mb-3 font-weight-normal">ログインフォーム</h1>
 
-  @if ($errors->any())
+    @if ($errors->any())
     <div class="alert alert-danger">
         <ul class="mb-0">
             @foreach ($errors->all() as $error)
@@ -24,7 +24,25 @@
             @endforeach
         </ul>
     </div>
-@endif
+    @endif
+
+    <!-- ログインエラー表示 -->
+    <!-- @if(session('login_error'))
+        <div class="alert alert-danger">
+            {{ session('login_error') }}
+        </div>
+    @endif -->
+    <!-- ログインエラー表示(コンポーネント化) -->
+    <x-alert type="danger" :session="session('login_error')"/>
+
+    <!-- ログアウト処理表示 -->
+    <!-- @if(session('logout'))
+        <div class="alert alert-danger">
+            {{ session('logout') }}
+        </div>
+    @endif -->
+    <!-- ログアウト処理表示(コンポーネント化) -->
+    <x-alert type="danger" :session="session('logout')"/>
 
   <label for="inputEmail" class="sr-only"></label>
   <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" autofocus>
