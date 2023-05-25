@@ -9,22 +9,41 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <div class="container">
-        <div class="mt-5">
+    <header>@include('header')</header>
 
+    <div class="container">
+        <div class="mt-1">
             <!-- ログイン成功(フラッシュ表示) -->
             <x-alert type="success" :session="session('login_success')"/>
-
-            <h3>プロフィール</h3>
-            <ul>
-                <li>名前：{{ Auth::user()->last_name }}{{ Auth::user()->first_name }}</li>
-                <li>メールアドレス{{ Auth::user()->email }}</li>
-            </ul>
-            <form action="{{ route('logout') }}" method="POST">
-                @csrf
-                <button class="btn btn-danger">ログアウト</button>
-            </form>
         </div>
     </div>
+
+    <!-- ホーム画面の上部5つのアイテム -->
+    @include('home_summary')
+
+    <div class="container container-home-summary2 mt-5" style="height:40%;">
+        <div class="row row-home-summary2 d-flex justify-content-center h-100">
+            <div class="col-6 h-100">
+                <div class="row w-100 h-100 d-flex justify-content-end">
+                    <div class="col-12 h-100 border rounded-1" style="width:90%;">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 h-100 d-flex flex-column align-items-start justify-content-between">
+                <div class="row w-100 d-flex justify-content-start order-1" style="height:45%;">
+                    <div class="col-12 h-100 border rounded-1" style="width:90%;">
+                        
+                    </div>
+                </div>
+                <div class="row w-100 d-flex justify-content-start order-2"  style="height:45%;">
+                    <div class="col-12 h-100 border rounded-1" style="width:90%;">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
