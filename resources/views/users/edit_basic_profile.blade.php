@@ -19,7 +19,7 @@
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="m-0 p-0 px-3 lh-3rem">基本情報</h3>
                         <div class="justify-content-between">
-                            <button class="btn btn-success btn-gradient" onclick="location.href='{{ route('users.showBasicProfile') }}'"">キャンセル</button>
+                            <button class="btn btn-success btn-gradient" onclick="location.href='{{ route('user.showBasicProfile') }}'"">キャンセル</button>
                             <form action="" method="POST" style="padding-left:1rem; float:right;">
                                 @csrf
                                 <button class="btn btn-danger btn-gradient">登録</button>

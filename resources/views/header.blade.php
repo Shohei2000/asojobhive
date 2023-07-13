@@ -15,11 +15,11 @@
         </li>
 
         <li class="nav-item d-flex px-2">
-          <a class="nav-link text-white p-0 align-self-center" href="{{ route('users.showBasicProfile') }}">マイページ</a>
+          <a class="nav-link text-white p-0 align-self-center" href="{{ route('user.showBasicProfile') }}">マイページ</a>
         </li>
 
         <li class="nav-item d-flex px-2">
-          <a class="nav-link text-white p-0 align-self-center" href="{{ route('job_posts.show') }}">企業一覧</a>
+          <a class="nav-link text-white p-0 align-self-center" href="{{ route('companies.show') }}">企業一覧</a>
         </li>
 
       </ul>

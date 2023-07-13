@@ -28,16 +28,6 @@ class UserController extends Controller
         return view('users.edit_basic_profile');
     }
 
-    public function showBookmarks()
-    {
-        /**
-         * 気になるリスト画面を表示.
-         *
-         * @return \Illuminate\Contracts\Support\Renderable
-         */
-        return view('users.bookmarks');
-    }
-
     public function showEntries()
     {
         /**

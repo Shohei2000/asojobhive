@@ -18,7 +18,7 @@
                 <div class="row w-100 mx-0 my-4 lh-3rem">
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="m-0 p-0 px-3 lh-3rem">基本情報</h3>
-                        <a class="nav-link px-3" href="{{ route('users.editBasicProfile') }}">
+                        <a class="nav-link px-3" href="{{ route('user.editBasicProfile') }}">
                             <i class="fa-sharp fa-solid fa-pen-to-square fa-2xl lh-1" alt="編集アイコン"></i>
                         </a>
                     </div>

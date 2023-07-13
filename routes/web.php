@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;//ログイン用
 use App\Http\Controllers\HomeController;//ホーム画面(ダッシュボード画面)用
 use App\Http\Controllers\UserController;//ユーザー情報用
-use App\Http\Controllers\JobController;//企業・仕事用
+use App\Http\Controllers\CompanyController;//企業用
+use App\Http\Controllers\JobController;//求人用
+use App\Http\Controllers\BookmarkController;//企業・仕事用
 
 
 /*
@@ -37,25 +39,35 @@ Route::middleware(['auth'])->group(function () {
     Route::get('home', [HomeController::class, 'index'])->name('home');
 
     //ログアウト機能
-    Route::post('logout', 
-    [AuthController::class, 'logout'])
-    ->name('logout');
+    Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
     //基本プロフィール画面
-    Route::get('basic_profile', [UserController::class, 'showBasicProfile'])->name('users.showBasicProfile');
+    Route::get('basic_profile', [UserController::class, 'showBasicProfile'])->name('user.showBasicProfile');
     //基本プロフィール編集画面
-    Route::get('basic_profile/edit', [UserController::class, 'editBasicProfile'])->name('users.editBasicProfile');
+    Route::get('basic_profile/edit', [UserController::class, 'editBasicProfile'])->name('user.editBasicProfile');
 
-    //求人票一覧画面
-    Route::get('job_posts', [JobController::class, 'showJobPosts'])->name('job_posts.show');
+    //企業一覧画面
+    Route::get('companies', [CompanyController::class, 'showCompanies'])->name('companies.show');
+    //企業詳細画面
+    Route::get('companies/{company}/detail', [CompanyController::class, 'showCompanyDetail'])->name('company.detail');
+    
+    //求人詳細画面
+    Route::get('companies/{company}/{job}', [JobController::class, 'showJobDetail'])->name('job.detail');
+
+    // ブックマーク追加と削除をまとめる(改善の余地あり)
+    //ブックマック追加機能
+    Route::post('bookmark_store', [BookmarkController::class, 'store'])->name('bookmark.store');
+    //ブックマック削除機能
+    Route::post('bookmark_restore', [BookmarkController::class, 'restore'])->name('bookmark.restore');
+    
     //気になるリスト画面
-    Route::get('bookmarks', [UserController::class, 'showBookmarks'])->name('users.showBookmarks');
+    Route::get('bookmarks', [BookmarkController::class, 'showBookmarks'])->name('user.showBookmarks');
     //応募済みリスト画面
-    Route::get('entries', [UserController::class, 'showEntries'])->name('users.showEntries');
+    Route::get('entries', [UserController::class, 'showEntries'])->name('user.showEntries');
     //選考中リスト画面
-    Route::get('selections', [UserController::class, 'showSelections'])->name('users.showSelections');
+    Route::get('selections', [UserController::class, 'showSelections'])->name('user.showSelections');
     //内定済みリスト画面
-    Route::get('offers', [UserController::class, 'showOffers'])->name('users.showOffers');
+    Route::get('offers', [UserController::class, 'showOffers'])->name('user.showOffers');
 
 
 });
