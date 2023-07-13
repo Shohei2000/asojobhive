@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFavorites extends Migration
+class CreateBookmarksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,7 @@ class CreateFavorites extends Migration
      */
     public function up()
     {
-        
-        Schema::create('favorites', function (Blueprint $table) {
+        Schema::create('bookmarks', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('company_id');
@@ -23,6 +22,9 @@ class CreateFavorites extends Migration
             // 外部キー制約の設定
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
+
+            // user_idとcompany_idはユニークにする
+            $table->unique(['user_id', 'company_id']);
         });
 
     }
@@ -34,6 +36,6 @@ class CreateFavorites extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('bookmarks');
     }
 }
