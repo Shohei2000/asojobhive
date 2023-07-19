@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Bookmark;
+use App\Models\Job;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class JobController extends Controller
 {
     /**
-     * 企業一覧表示を表示.
+     * 求人詳細を表示.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
@@ -28,6 +32,4 @@ class JobController extends Controller
 
         // 6件ずつ表示
 
-        return view('jobs.job_posts', compact('companies'));
-    }
 }

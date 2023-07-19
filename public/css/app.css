@@ -8027,8 +8027,9 @@ sup {
 }
 
 a {
-  color: var(--bs-link-color);
-  text-decoration: underline;
+  text-decoration-color: black;
+  color: black;
+  text-decoration: none;
 }
 a:hover {
   color: var(--bs-link-hover-color);
@@ -16021,6 +16022,16 @@ textarea.form-control-lg {
   border-top-left-radius: var(--bs-border-radius) !important;
 }
 
+.rounded-top-3 {
+  border-top-left-radius: var(--bs-border-radius-lg) !important;
+  border-top-right-radius: var(--bs-border-radius-lg) !important;
+}
+
+.rounded-top-4 {
+  border-top-left-radius: var(--bs-border-radius-xl) !important;
+  border-top-right-radius: var(--bs-border-radius-xl) !important;
+}
+
 .visible {
   visibility: visible !important;
 }
@@ -18554,4 +18565,43 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+/* オリジナルCSS */
+.vertical-align-middle {
+  vertical-align: middle;
+}
+
+.lh-3rem{
+  line-height: 3rem;
+}
+
+.detail-td-15{
+  width: 15%;
+  text-align: center;
+}
+
+/* 企業一覧画面 */
+.company_card {
+  box-shadow: 0 0 0.5rem lightblue;
+  border-radius: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 95%;
+}
+
+/* 企業詳細画面 */
+table tr td:first-child {
+  background-color: #f5f5f5;
+}
+
+.job_card {
+  width:30%;
+  background: white;
+  box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
+  margin:0rem 0rem 2rem 0rem;
+}
+
+.job_card_middle {
+  margin:0rem 2.5rem 2rem 2.5rem;
 }
