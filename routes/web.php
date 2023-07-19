@@ -7,12 +7,11 @@ use App\Http\Controllers\UserController;//ユーザー情報用
 use App\Http\Controllers\JobController;//企業・仕事用
 use App\Http\Controllers\SuggestController;//オートコンプリート用
 use App\Http\Controllers\CompanyController;//企業用
-use App\Http\Controllers\JobController;//求人用
 use App\Http\Controllers\BookmarkController;//企業・仕事用
 
 
 /*
-|--------------------------------------------------------------------------
+|----------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |

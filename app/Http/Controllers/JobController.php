@@ -30,6 +30,6 @@ class JobController extends Controller
 
         $companies = $companies->get();
 
-        // 6件ずつ表示
+    }
 
 }
