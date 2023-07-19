@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\AuthController;//ログイン用
 use App\Http\Controllers\HomeController;//ホーム画面(ダッシュボード画面)用
 use App\Http\Controllers\UserController;//ユーザー情報用
 use App\Http\Controllers\JobController;//企業・仕事用
+use App\Http\Controllers\SuggestController;//オートコンプリート用
 
 
 /*
@@ -46,7 +47,7 @@ Route::middleware(['auth'])->group(function () {
     //基本プロフィール編集画面
     Route::get('basic_profile/edit', [UserController::class, 'editBasicProfile'])->name('users.editBasicProfile');
 
-    //求人票一覧画面
+    //求人票一覧画面,検索結果
     Route::get('job_posts', [JobController::class, 'showJobPosts'])->name('job_posts.show');
     //気になるリスト画面
     Route::get('bookmarks', [UserController::class, 'showBookmarks'])->name('users.showBookmarks');
@@ -56,6 +57,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('selections', [UserController::class, 'showSelections'])->name('users.showSelections');
     //内定済みリスト画面
     Route::get('offers', [UserController::class, 'showOffers'])->name('users.showOffers');
-
+    //検索サジェスト
+    Route::get('/autocomplete',[SuggestController::class,'suggest']);
 
 });
