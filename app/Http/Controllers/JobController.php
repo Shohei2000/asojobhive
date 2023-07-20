@@ -17,39 +17,19 @@ class JobController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    // public function showJobPosts()
-    // {
+    public function showJobPosts(Request $request)
+    {
+        $companies = Company::query();
 
-    //     $companies = Company::all();
-    //     $bookmarks = Bookmark::where('user_id', Auth::user()->id)->get();
+        $keyword = $request->input('keyword');
+        // キーワードが指定されている場合は検索処理を実行
+        if (!empty($keyword)) {
+            $companies->where('company_name', 'LIKE', '%' . $keyword . '%')
+            ->orwhere('company_name_kana', 'LIKE', '%' . $keyword . '%');
+        }
 
-    //     return view('jobs.job_posts', compact('companies', 'bookmarks'));
-    // }
+        $companies = $companies->get();
 
-    // // 企業詳細画面の表示
-    // public function showJobPostDetail(Company $company){
-
-    //      // 企業に関連するjobsのデータを取得
-
-    //     $jobs = Job::where('jobs.company_id', $company->id)
-    //                 ->get();
-        
-    //     return view('jobs.job_detail', compact('company', 'jobs'));
-    // }
-
-    // 企業求人詳細画面の表示
-    public function showJobDetail(Company $company, Job $job){
-
-    //     企業に関連するjobsのデータを取得
-    //    $jobs = Job::where('jobs.company_id', $company->id)
-    //                ->get();
-
-        $bookmarks = Bookmark::where('user_id', Auth::user()->id)->get();
-        $active = "JobDetail";
-       
-       return view('jobs.job_detail', compact('company', 'job', 'bookmarks', 'active'));
-   }
-
-    
+    }
 
 }
