@@ -179,6 +179,6 @@ class AuthController extends Controller
     // Save the updated user
     $user->save();
 
-    return redirect()->route('users.showBasicProfile')->with('register_success', '登録が完了しました。');
+    return redirect()->route('user.showBasicProfile')->with('register_success', '登録が完了しました。');
     }
 }
