@@ -20,10 +20,9 @@
                         <h3 class="m-0 p-0 px-3 lh-3rem">基本情報</h3>
                         <div class="justify-content-between">
                             <button class="btn btn-success btn-gradient" onclick="location.href='{{ route('user.showBasicProfile') }}'"">キャンセル</button>
-                            <form action="" method="POST" style="padding-left:1rem; float:right;">
+                            <form action="{{ route('edit.check') }}" method="POST" style="padding-left:1rem; float:right;">
                                 @csrf
-                                <button class="btn btn-danger btn-gradient">登録</button>
-                            </form>
+                                <button type="submit" class="btn btn-danger btn-gradient">登録</button>
                         </div>
                     </div>
                 </div>
@@ -35,39 +34,53 @@
                                 <table class="table table-bordered vertical-align-middle" style="height:25rem;">
                                     <tbody>
                                         <tr class="p-2">
-                                        <td class="col-4 table-info">氏名</td>
-                                        <td class="col-8">{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}</td>
+                                        <td class="col-4 table-info">性</td>
+                                        <td class="col-8"><input type="text" id="first_name" name="first_name" value="{{ Auth::user()->first_name }}"></td>
                                         </tr>
                                         <tr>
-                                        <td class="col-4 table-info">ふりがな</td>
-                                        <td class="col-8">{{ Auth::user()->last_name_furigana }} {{ Auth::user()->first_name_furigana }}</td>
+                                        <td class="col-4 table-info">性(ふりがな)</td>
+                                        <td class="col-8"><input type="text" id="first_name_furigana" name="first_name_furigana" value="{{ Auth::user()->first_name_furigana }}"></td>
+                                        </tr>
+                                        <tr class="p-2">
+                                        <td class="col-4 table-info">名前</td>
+                                        <td class="col-8"><input type="text" id="last_name" name="last_name" value="{{ Auth::user()->last_name }}"></td>
+                                        </tr>
+                                        <tr>
+                                        <td class="col-4 table-info">名前(ふりがな)</td>
+                                        <td class="col-8"><input type="text" id="last_name_furigana" name="last_name_furigana" value="{{ Auth::user()->last_name_furigana }}"></td>
                                         </tr>
                                         <tr>
                                         <td class="col-4 table-info">性別</td>
-                                        <td class="col-8">{{ Auth::user()->gender }}</td>
+                                        <td class="col-8">
+                                            <select name="gender" id="gender" required>
+                                                <option value="男性" {{ Auth::user()->gender === '男性' ? 'selected' : '' }}>男性</option>
+                                                <option value="女性" {{ Auth::user()->gender === '女性' ? 'selected' : '' }}>女性</option>
+                                            </select>
+                                        </td>
                                         </tr>
                                         <tr>
                                         <td class="col-4 table-info">誕生日</td>
-                                        <td class="col-8">{{ Auth::user()->birthday }}</td>
+                                        <td class="col-8"><input type="date" id="birthday" name="birthday" value="{{ Auth::user()->birthday }}"></td>
                                         </tr>
                                         <tr>
                                         <td class="col-4 table-info">住所</td>
-                                        <td class="col-8">{{ Auth::user()->address }}</td>
+                                        <td class="col-8"><input type="text" name="address" value="{{ Auth::user()->address }}" style="width: {{ strlen(Auth::user()->address) }}ch;"></td>
                                         </tr>
                                         <tr>
                                         <td class="col-4 table-info">電話番号</td>
-                                        <td class="col-8">{{ Auth::user()->phone_number }}</td>
+                                        <td class="col-8"><input type="text" name="phone_number" value="{{ Auth::user()->phone_number }}"></td>
                                         </tr>
                                         <tr>
                                         <td class="col-4 table-info">メールアドレス</td>
-                                        <td class="col-8">{{ Auth::user()->email }}</td>
+                                        <td class="col-8"><input type="email" name="email" id="email" value="{{ Auth::user()->email }}" style="width: {{ strlen(Auth::user()->email) }}ch;"></td>
                                         </tr>
                                         <tr>
                                         <td class="col-4 table-info">パスワード</td>
-                                        <td class="col-8">{{ Auth::user()->password }}</td>
+                                        <td class="col-8"><input type="password" name="password" value="{{ Auth::user()->password }}"></td>
                                         </tr>
                                     </tbody>
                                 </table>
+                            </form>
                             </div>
                         </div>
                     </div>
