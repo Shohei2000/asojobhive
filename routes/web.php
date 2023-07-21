@@ -45,7 +45,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('basic_profile', [UserController::class, 'showBasicProfile'])->name('user.showBasicProfile');
     //基本プロフィール編集画面
     Route::get('basic_profile/edit', [UserController::class, 'editBasicProfile'])->name('user.editBasicProfile');
-
+    //登録情報更新処理
+    Route::post('/edit', [AuthController::class, 'editCheck'])->name('edit.check');
+  
     //企業一覧画面
     Route::get('companies', [CompanyController::class, 'showCompanies'])->name('companies.show');
     //企業詳細画面
