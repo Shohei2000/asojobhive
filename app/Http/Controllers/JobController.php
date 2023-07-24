@@ -30,6 +30,8 @@ class JobController extends Controller
 
         $companies = $companies->get();
 
+        return view('job_posts', compact('companies'));
+
     }
 
 }
