@@ -31,5 +31,29 @@ class JobController extends Controller
         $companies = $companies->get();
 
     }
+    
+    // 企業詳細画面の表示
+    // public function showJobPostDetail(Company $company){
+
+    //      // 企業に関連するjobsのデータを取得
+
+    //     $jobs = Job::where('jobs.company_id', $company->id)
+    //                 ->get();
+
+    //     return view('jobs.job_detail', compact('company', 'jobs'));
+    // }
+
+    // 企業求人詳細画面の表示
+    public function showJobDetail(Company $company, Job $job){
+
+    //     企業に関連するjobsのデータを取得
+    //    $jobs = Job::where('jobs.company_id', $company->id)
+    //                ->get();
+
+        $bookmarks = Bookmark::where('user_id', Auth::user()->id)->get();
+        $active = "JobDetail";
+
+       return view('jobs.job_detail', compact('company', 'job', 'bookmarks', 'active'));
+   }
 
 }

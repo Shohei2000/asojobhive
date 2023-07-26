@@ -11,7 +11,7 @@ use App\Http\Controllers\BookmarkController;//企業・仕事用
 
 
 /*
-|----------------------------------------------------------
+|--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
@@ -46,6 +46,20 @@ Route::middleware(['auth'])->group(function () {
     Route::get('basic_profile', [UserController::class, 'showBasicProfile'])->name('user.showBasicProfile');
     //基本プロフィール編集画面
     Route::get('basic_profile/edit', [UserController::class, 'editBasicProfile'])->name('user.editBasicProfile');
+
+    //企業一覧画面
+    Route::get('companies', [CompanyController::class, 'showCompanies'])->name('companies.show');
+    //企業詳細画面
+    Route::get('companies/{company}/detail', [CompanyController::class, 'showCompanyDetail'])->name('company.detail');
+
+    //求人詳細画面
+    Route::get('companies/{company}/{job}', [JobController::class, 'showJobDetail'])->name('job.detail');
+
+    // ブックマーク追加と削除をまとめる(改善の余地あり)
+    //ブックマック追加機能
+    Route::post('bookmark_store', [BookmarkController::class, 'store'])->name('bookmark.store');
+    //ブックマック削除機能
+    Route::post('bookmark_restore', [BookmarkController::class, 'restore'])->name('bookmark.restore');
 
     //求人票一覧画面,検索結果
     Route::get('job_posts', [JobController::class, 'showJobPosts'])->name('job_posts.show');
