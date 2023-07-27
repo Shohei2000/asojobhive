@@ -27,7 +27,32 @@
                                     <img src="{{ asset('images/asojobhive_logo.png') }}" alt="asojobhive_logo" class="d-inline-block align-text-top w-100" style="height:20vh;">
                                 </div>
                                 <div class="col-6">
-                                    <p>{{ $company->company_name }}</p>
+                                    <p style="font-size: 20px; font-weight: bold;">
+                                        {{$company->company_name}}
+                                    </p>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <p class="mb-0">設立　{{$company->established}}</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="mb-0">社員数　{{$company->employees}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p class="mb-0">株式　{{$company->stocks}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p class="mb-0">売上　{{$company->annual_sales}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p class="mb-0">企業URL　<a href="{{ $company->website_url }}" target="_blank">{{ $company->website_url }}</a></p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="row" style="height:25%;">
