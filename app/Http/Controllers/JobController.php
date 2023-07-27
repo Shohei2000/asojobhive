@@ -26,14 +26,13 @@ class JobController extends Controller
     //     return view('jobs.job_posts', compact('companies', 'bookmarks'));
     // }
 
-    // // 企業詳細画面の表示
+    // 企業詳細画面の表示
     // public function showJobPostDetail(Company $company){
 
     //      // 企業に関連するjobsのデータを取得
 
     //     $jobs = Job::where('jobs.company_id', $company->id)
     //                 ->get();
-        
     //     return view('jobs.job_detail', compact('company', 'jobs'));
     // }
 
@@ -46,10 +45,8 @@ class JobController extends Controller
 
         $bookmarks = Bookmark::where('user_id', Auth::user()->id)->get();
         $active = "JobDetail";
-       
-       return view('jobs.job_detail', compact('company', 'job', 'bookmarks', 'active'));
-   }
 
-    
+       return view('jobs.job_detail', compact('company', 'job', 'bookmarks', 'active'));
+    }
 
 }
