@@ -19,13 +19,13 @@
                 </div>
                 <div class="col-12 p-0" style="height:40%">
                     <div class="h-100 w-100">
-                        <p class="p-0 m-0 h-100 w-100 text-light fs-2">15</p>
+                        <p class="p-0 m-0 h-100 w-100 text-light fs-2">{{ $bookmark_count }}</p>
                     </div>
                 </div>
                 <div class="col-12 p-0 d-flex text-center border-top border-light" style="height:25%">
                     <div class="w-100 align-self-center">
                         <p class="p-0 m-0 w-100 text-light">
-                            <a class="nav-link text-white p-0" href="{{ route('users.showBookmarks') }}">リストを見る</a>
+                            <a class="nav-link text-white p-0" href="{{ route('user.showBookmarks') }}">リストを見る</a>
                         </p>
                     </div>
                 </div>
@@ -51,7 +51,7 @@
                 <div class="col-12 p-0 d-flex text-center border-top border-light" style="height:25%">
                     <div class="w-100 align-self-center">
                         <p class="p-0 m-0 w-100 text-light">
-                            <a class="nav-link text-white p-0" href="{{ route('users.showEntries') }}">リストを見る</a>
+                            <a class="nav-link text-white p-0" href="{{ route('user.showEntries') }}">リストを見る</a>
                         </p>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
                 <div class="col-12 p-0 d-flex text-center border-top border-light" style="height:25%">
                     <div class="w-100 align-self-center">
                         <p class="p-0 m-0 w-100 text-light">
-                            <a class="nav-link text-white p-0" href="{{ route('users.showSelections') }}">リストを見る</a>
+                            <a class="nav-link text-white p-0" href="{{ route('user.showSelections') }}">リストを見る</a>
                         </p>
                     </div>
                 </div>
@@ -103,7 +103,7 @@
                 <div class="col-12 p-0 d-flex text-center border-top border-light" style="height:25%">
                     <div class="w-100 align-self-center">
                         <p class="p-0 m-0 w-100 text-light">
-                            <a class="nav-link text-white p-0" href="{{ route('users.showOffers') }}">リストを見る</a>
+                            <a class="nav-link text-white p-0" href="{{ route('user.showOffers') }}">リストを見る</a>
                         </p>
                     </div>
                 </div>

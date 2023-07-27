@@ -7,6 +7,11 @@
     <title>プロファイル</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <!-- ビューファイル内の<head>セクション内に以下のスクリプトを追加 -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 </head>
 <body>
     <header>@include('header')</header>
@@ -18,7 +23,7 @@
                 <div class="row w-100 mx-0 my-4 lh-3rem">
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="m-0 p-0 px-3 lh-3rem">基本情報</h3>
-                        <a class="nav-link px-3" href="{{ route('users.editBasicProfile') }}">
+                        <a class="nav-link px-3" href="{{ route('user.editBasicProfile') }}">
                             <i class="fa-sharp fa-solid fa-pen-to-square fa-2xl lh-1" alt="編集アイコン"></i>
                         </a>
                     </div>

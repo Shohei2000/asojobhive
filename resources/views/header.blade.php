@@ -15,20 +15,22 @@
         </li>
 
         <li class="nav-item d-flex px-2">
-          <a class="nav-link text-white p-0 align-self-center" href="{{ route('users.showBasicProfile') }}">マイページ</a>
+          <a class="nav-link text-white p-0 align-self-center" href="{{ route('user.showBasicProfile') }}">マイページ</a>
         </li>
 
         <li class="nav-item d-flex px-2">
-          <a class="nav-link text-white p-0 align-self-center" href="{{ route('job_posts.show') }}">企業一覧</a>
+          <a class="nav-link text-white p-0 align-self-center" href="{{ route('companies.show') }}">企業一覧</a>
         </li>
 
       </ul>
 
-      <form class="d-flex">
+      <form class="d-flex" action="{{ route('companies.show') }}" method="GET">
         @csrf
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" autocomplete="off" />
         <button class="btn btn-outline-light" type="submit">Search</button>
       </form>
+      <script src="{{ asset('js/app.js') }}"></script>
+      <script src="{{ asset('js/search.js') }}"></script>
 
       <form action="{{ route('logout') }}" method="POST" style="padding-left:1rem;">
         @csrf
