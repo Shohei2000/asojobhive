@@ -4,9 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;//ログイン用
 use App\Http\Controllers\HomeController;//ホーム画面(ダッシュボード画面)用
 use App\Http\Controllers\UserController;//ユーザー情報用
+
 use App\Http\Controllers\CompanyController;//企業用
 use App\Http\Controllers\JobController;//求人用
-use App\Http\Controllers\BookmarkController;//企業・仕事用
+
+use App\Http\Controllers\SuggestController;//オートコンプリート用
+use App\Http\Controllers\BookmarkController;//ブックマーク用
 
 
 /*
@@ -69,6 +72,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('selections', [UserController::class, 'showSelections'])->name('user.showSelections');
     //内定済みリスト画面
     Route::get('offers', [UserController::class, 'showOffers'])->name('user.showOffers');
+
+    //検索サジェスト
+    Route::get('/autocomplete',[SuggestController::class,'suggest']);
 
 
 });

@@ -16,12 +16,23 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function showCompanies()
+    public function showCompanies(Request $request)
     {
-
-        $companies = Company::all();
+        $companies = Company::query();
+    
         $bookmarks = Bookmark::where('user_id', Auth::user()->id)->get();
-
+    
+        if (isset($request)) {
+            $keyword = $request->input('keyword');
+            // キーワードが指定されている場合は検索処理を実行
+            if (!empty($keyword)) {
+                $companies->where('company_name', 'LIKE', '%' . $keyword . '%')
+                         ->orWhere('company_name_kana', 'LIKE', '%' . $keyword . '%');
+            }
+        }
+    
+        $companies = $companies->get(); // 実際の結果を取得
+    
         return view('companies.companies', compact('companies', 'bookmarks'));
     }
 
