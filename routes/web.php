@@ -76,5 +76,14 @@ Route::middleware(['auth'])->group(function () {
     //検索サジェスト
     Route::get('/autocomplete',[SuggestController::class,'suggest']);
 
-
+    //質問画面
+    Route::get('/job_posts/{companyId}/questions', [JobController::class, 'showQuestions'])->name('job_posts.questions');
+    //質問投稿画面
+    Route::get('/job_posts/{companyId}/question_form', [JobController::class, 'showQuestionForm'])->name('job_posts.question_form');
+    //質問投稿処理
+    Route::post('/job_posts/{companyId}/questions', [JobController::class, 'storeQuestion'])->name('job_posts.store_question');
+    //質問詳細画面表示
+    Route::get('/job_posts/{companyId}/questions/{questionId}', [JobController::class, 'showQuestion'])->name('job_posts.question');
+    //質問詳細画面への返信処理
+    Route::post('/reply_submit', [JobController::class, 'submitReply'])->name('job_posts.reply_submit');
 });
