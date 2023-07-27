@@ -17,21 +17,15 @@ class JobController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function showJobPosts(Request $request)
-    {
-        $companies = Company::query();
+    // public function showJobPosts()
+    // {
 
-        $keyword = $request->input('keyword');
-        // キーワードが指定されている場合は検索処理を実行
-        if (!empty($keyword)) {
-            $companies->where('company_name', 'LIKE', '%' . $keyword . '%')
-            ->orwhere('company_name_kana', 'LIKE', '%' . $keyword . '%');
-        }
+    //     $companies = Company::all();
+    //     $bookmarks = Bookmark::where('user_id', Auth::user()->id)->get();
 
-        $companies = $companies->get();
+    //     return view('jobs.job_posts', compact('companies', 'bookmarks'));
+    // }
 
-    }
-    
     // 企業詳細画面の表示
     // public function showJobPostDetail(Company $company){
 
@@ -39,7 +33,6 @@ class JobController extends Controller
 
     //     $jobs = Job::where('jobs.company_id', $company->id)
     //                 ->get();
-
     //     return view('jobs.job_detail', compact('company', 'jobs'));
     // }
 
@@ -54,6 +47,6 @@ class JobController extends Controller
         $active = "JobDetail";
 
        return view('jobs.job_detail', compact('company', 'job', 'bookmarks', 'active'));
-   }
+    }
 
 }

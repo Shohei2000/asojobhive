@@ -4,9 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;//ログイン用
 use App\Http\Controllers\HomeController;//ホーム画面(ダッシュボード画面)用
 use App\Http\Controllers\UserController;//ユーザー情報用
-use App\Http\Controllers\JobController;//企業・仕事用
-use App\Http\Controllers\SuggestController;//オートコンプリート用
 use App\Http\Controllers\CompanyController;//企業用
+use App\Http\Controllers\JobController;//求人用
 use App\Http\Controllers\BookmarkController;//企業・仕事用
 
 
@@ -56,15 +55,12 @@ Route::middleware(['auth'])->group(function () {
 
     //求人詳細画面
     Route::get('companies/{company}/{job}', [JobController::class, 'showJobDetail'])->name('job.detail');
-
     // ブックマーク追加と削除をまとめる(改善の余地あり)
     //ブックマック追加機能
     Route::post('bookmark_store', [BookmarkController::class, 'store'])->name('bookmark.store');
     //ブックマック削除機能
     Route::post('bookmark_restore', [BookmarkController::class, 'restore'])->name('bookmark.restore');
-
-    //求人票一覧画面,検索結果
-    Route::get('job_posts', [JobController::class, 'showJobPosts'])->name('job_posts.show');
+    
     //気になるリスト画面
     Route::get('bookmarks', [BookmarkController::class, 'showBookmarks'])->name('user.showBookmarks');
     //応募済みリスト画面
@@ -73,7 +69,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('selections', [UserController::class, 'showSelections'])->name('user.showSelections');
     //内定済みリスト画面
     Route::get('offers', [UserController::class, 'showOffers'])->name('user.showOffers');
-    //検索サジェスト
-    Route::get('/autocomplete',[SuggestController::class,'suggest']);
+
 
 });
