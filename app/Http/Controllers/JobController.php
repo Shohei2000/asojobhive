@@ -47,6 +47,7 @@ class JobController extends Controller
         $active = "JobDetail";
 
        return view('jobs.job_detail', compact('company', 'job', 'bookmarks', 'active'));
+
     }
 
 }
