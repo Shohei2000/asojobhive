@@ -52,10 +52,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('companies', [CompanyController::class, 'showCompanies'])->name('companies.show');
     //企業詳細画面
     Route::get('companies/{company}/detail', [CompanyController::class, 'showCompanyDetail'])->name('company.detail');
-    
+
     //求人詳細画面
     Route::get('companies/{company}/{job}', [JobController::class, 'showJobDetail'])->name('job.detail');
-
     // ブックマーク追加と削除をまとめる(改善の余地あり)
     //ブックマック追加機能
     Route::post('bookmark_store', [BookmarkController::class, 'store'])->name('bookmark.store');

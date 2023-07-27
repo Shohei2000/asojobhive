@@ -24,7 +24,7 @@
 
       </ul>
 
-      <form class="d-flex">
+      <form class="d-flex" action="{{ route('companies.show') }}" method="GET">
         @csrf
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-light" type="submit">Search</button>
