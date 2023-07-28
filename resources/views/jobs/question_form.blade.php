@@ -12,7 +12,7 @@
     </head>
     <body>
         <header>@include('header')</header>
-        <form action="{{ route('job_posts.store_question', $company->id) }}" method="POST">
+        <form action="{{ route('companies.store_question', [$company->id]) }}" method="POST">
             @csrf
             <div>
                 <label for="question_title">質問タイトル:</label>

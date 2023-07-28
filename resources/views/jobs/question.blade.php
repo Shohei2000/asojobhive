@@ -19,7 +19,7 @@
 
         <div>
             <h2>返信投稿</h2>
-            <form action="{{ route('job_posts.reply_submit') }}" method="POST">
+            <form action="{{ route('companies.reply_submit') }}" method="POST">
                 @csrf
                 <input type="hidden" name="question_id" value="{{ $question->id }}">
                 <textarea name="reply_content" id="reply_content" cols="30" rows="5" required></textarea>
@@ -40,7 +40,7 @@
         @endif
 
         <!-- 前の画面へ戻る -->
-        <a herf="">戻る</a>
+        <a href="{{ route('company.questions', ['companyId' => $question->company->id]) }}">戻る</a>
 
         <!-- JavaScript -->
         <script src="{{ asset('js/app.js') }}" defer></script>

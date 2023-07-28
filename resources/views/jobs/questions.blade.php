@@ -16,7 +16,7 @@
     <header>@include('header')</header>
     <h1>質問一覧</h1>
     @if ($questions->isNotEmpty())
-        <a href="{{ route('job_posts.question_form', ['companyId' => $company->id]) }}" class="btn btn-primary">質問を投稿する</a>
+        <a href="{{ route('companies.question_form', ['companyId' => $company->id]) }}" class="btn btn-primary">質問を投稿する</a>
         <table>
             <thead>
                 <tr>
@@ -29,7 +29,7 @@
                 <tr>
                     <td>{{ $question->question_title }}</td>
                     <td>{{ $question->question_content }}</td>
-                    <td><a href="{{ route('job_posts.question', ['companyId' => $company->id, 'questionId' => $question->id]) }}">質問詳細を表示</a></td>
+                    <td><a href="{{ route('companies.question', ['companyId' => $company->id, 'questionId' => $question->id]) }}">質問詳細を表示</a></td>
                 </tr>
             @endforeach
             </tbody>
