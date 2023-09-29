@@ -1,5 +1,5 @@
 <!-- showQuestion.blade.php -->
-
+<!-- 必要のないページの可能性あり -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
