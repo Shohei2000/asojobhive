@@ -39,6 +39,10 @@
                                         <td class="col-8">{{ Auth::user()->last_name_furigana }} {{ Auth::user()->first_name_furigana }}</td>
                                         </tr>
                                         <tr>
+                                        <td class="col-4 table-info">クラスID</td>
+                                        <td class="col-8">{{ Auth::user()->class_id }}</td>
+                                        </tr>
+                                        <tr>
                                         <td class="col-4 table-info">性別</td>
                                         <td class="col-8">{{ Auth::user()->gender }}</td>
                                         </tr>

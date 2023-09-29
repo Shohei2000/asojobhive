@@ -50,6 +50,10 @@
                                         <td class="col-8"><input type="text" id="last_name_furigana" name="last_name_furigana" value="{{ Auth::user()->last_name_furigana }}"></td>
                                         </tr>
                                         <tr>
+                                        <td class="col-4 table-info">クラスID</td>
+                                        <td class="col-8"><input type="text" id="class_id" name="class_id" value="{{ Auth::user()->class_id }}"></td>
+                                        </tr>
+                                        <tr>
                                         <td class="col-4 table-info">性別</td>
                                         <td class="col-8">
                                             <select name="gender" id="gender" required>
