@@ -19,6 +19,14 @@
             <h2 class="titel-1">質問詳細</h2>
             <p class="p-1">質問タイトル: {{ $question->question_title }}</p>
             <p class="p-2">質問内容: {{ $question->question_content }}</p>
+        <div>
+            <h2>返信投稿</h2>
+            <form action="{{ route('companies.reply_submit') }}" method="POST">
+                @csrf
+                <input type="hidden" name="question_id" value="{{ $question->id }}">
+                <textarea name="reply_content" id="reply_content" cols="30" rows="5" required></textarea>
+                <button type="submit">返信する</button>
+            </form>
         </div>
 
         <div class="form-box">
