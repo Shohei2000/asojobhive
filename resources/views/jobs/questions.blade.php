@@ -11,17 +11,22 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- CSS -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/questions.css') }}">
 </head>
 <body>
     <header>@include('header')</header>
-    <h1>質問一覧</h1>
+    <h1 class="title-1">質問一覧</h1>
     @if ($questions->isNotEmpty())
-        <a href="{{ route('companies.question_form', ['companyId' => $company->id]) }}" class="btn btn-primary">質問を投稿する</a>
+        <div class="btn-container">
+            <a href="{{ route('job_posts.question_form', ['companyId' => $company->id]) }}" class="btn-primary">質問を投稿する</a>
+        </div>
         <table>
             <thead>
-                <tr>
+                <tr class="tr_title">
                     <th>タイトル</th>
                     <th>質問内容</th>
+                    <th> </th>
+                    <!--<th>詳細へ</th>-->
                 </tr>
             </thead>
             <tbody>
@@ -29,7 +34,7 @@
                 <tr>
                     <td>{{ $question->question_title }}</td>
                     <td>{{ $question->question_content }}</td>
-                    <td><a href="{{ route('companies.question', ['companyId' => $company->id, 'questionId' => $question->id]) }}">質問詳細を表示</a></td>
+                    <td><a class="a_link"href="{{ route('job_posts.question', ['companyId' => $company->id, 'questionId' => $question->id]) }}">詳細へ</a></td>
                 </tr>
             @endforeach
             </tbody>
@@ -37,5 +42,15 @@
     @else
         <p>質問が見つかりませんでした。</p>
     @endif
+
+    <!-- 前の画面へ戻る -->
+    <div class="btn-container">
+        <button class="btn-back" onclick="goBack()">戻る</button>
+    </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>
