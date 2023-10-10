@@ -8,6 +8,7 @@ use App\Http\Controllers\JobController;//企業・仕事用
 use App\Http\Controllers\SuggestController;//オートコンプリート用
 use App\Http\Controllers\CompanyController;//企業用
 use App\Http\Controllers\BookmarkController;//企業・仕事用
+use App\Http\Controllers\ApplyController;//公欠申請用
 
 
 /*
@@ -73,5 +74,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('offers', [UserController::class, 'showOffers'])->name('user.showOffers');
     //検索サジェスト
     Route::get('/autocomplete',[SuggestController::class,'suggest']);
+
+    //公欠申請画面
+    Route::get('apply/leave_application', [ApplyController::class, 'showLeaveApplication'])->name('apply.showLeaveApplication');
+
+    //公欠申請処理
+    Route::post('apply/leave_application_complete', [ApplyController::class, 'leaveApplication'])->name('apply.leaveApplication');
 
 });

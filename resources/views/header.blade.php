@@ -22,6 +22,10 @@
           <a class="nav-link text-white p-0 align-self-center" href="{{ route('companies.show') }}">企業一覧</a>
         </li>
 
+        <li class="nav-item d-flex px-2">
+          <a class="nav-link text-white p-0 align-self-center" href="{{ route('apply.showLeaveApplication') }}">公欠申請</a>
+        </li>
+
       </ul>
 
       <form class="d-flex" action="{{ route('companies.show') }}" method="GET">
