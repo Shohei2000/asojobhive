@@ -37,6 +37,7 @@ Route::middleware(['guest'])->group(function () {
     Route::post('/register/add', [AuthController::class, 'registerAdd'])->name('register.add');
 });
 
+Route::get('/teacher', 'TeacherController@login')->name('teacher.login');
 
 Route::middleware(['auth'])->group(function () {
     //ホーム画面(ダッシュボード)

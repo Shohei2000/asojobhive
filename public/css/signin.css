@@ -15,8 +15,8 @@ body {
 
 .form-signin {
   width: 100%;
-  max-width: 30vw;
-  padding: 4vw;
+  max-width: 18rem;
+  padding: 1rem;
   margin: auto;
   border: solid 1px orange;
   border-radius: 10px;

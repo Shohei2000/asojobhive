@@ -23,5 +23,14 @@
     },
     "dependencies": {
         "jquery": "^3.7.0"
-    }
+    },
+    "name": "asojobhive",
+    "version": "1.0.0",
+    "main": "webpack.mix.js",
+    "directories": {
+        "test": "tests"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": ""
 }
