@@ -89,6 +89,7 @@ class AuthController extends Controller
         'address' => 'required',
         'birthday' => 'required|date',
         'gender' => 'required|in:male,female',
+        'class_id' => 'required',
     ]);
 
     if ($validator->fails()) {
@@ -128,6 +129,7 @@ class AuthController extends Controller
         $user->remember_token = $request->input('remember_token');
         $user->birthday = $request->input('birthday');
         $user->gender = $request->input('gender');
+        $user->class_id = $request->input('class_id');
 
         // ユーザーを保存
         $user->save();
@@ -155,6 +157,7 @@ class AuthController extends Controller
         'address' => 'required',
         'birthday' => 'required|date',
         'gender' => 'required|in:male,female',
+        'class_id' => 'required',
     ]);
 
     // Get the authenticated user
@@ -175,6 +178,7 @@ class AuthController extends Controller
     $user->address = $request->input('address');
     $user->birthday = $request->input('birthday');
     $user->gender = $request->input('gender');
+    $user->class_id = $request->input('class_id');
 
     // Save the updated user
     $user->save();
