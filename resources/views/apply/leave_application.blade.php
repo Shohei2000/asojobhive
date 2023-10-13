@@ -19,68 +19,78 @@
     <div class="container my-4" style="width:85%; text-align: -webkit-center;">
 
         <div class="row">
-
             <p class="h2 my-4">公欠申請</p>
             <form method="POST" action="{{ route('apply.leaveApplication') }}">
                 @csrf
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【学科名】</td>
-                            <td class="py-4">
-                                <input type="text" name="department" value="" class="form-control" placeholder="学科名">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【学籍番号】</td>
-                            <td class="py-4">
-                                <input type="text" name="student_id" value="" class="form-control" placeholder="学籍番号">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【氏名】</td>
-                            <td class="py-4">
-                                <input type="text" name="name" value="{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}" class="form-control" readonly>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【日付】</td>
-                            <td class="py-4">
-                                <input type="date" name="date" value="" class="form-control" placeholder="日付">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【科目名】</td>
-                            <td class="py-4">
-                                <input type="text" name="subject" value="" class="form-control" placeholder="科目名">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【担当教師名】</td>
-                            <td class="py-4">
-                                <input type="text" name="teacher" value="" class="form-control" placeholder="担当教師名">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【企業名】</td>
-                            <td class="py-4">
-                                <input type="text" name="company_name" value="" class="form-control" placeholder="企業名">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【場所】</td>
-                            <td class="py-4">
-                                <input type="text" name="location" value="" class="form-control" placeholder="場所">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【内容】</td>
-                            <td class="py-4">
-                                <input type="text" name="content" value="" class="form-control" placeholder="内容">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【学科名】</p>
+                    </div>
+                    <div class="col-9 px-0">
+                        <input type="text" name="department" value="" class="form-control m-0 py-4 align-middle" placeholder="学科名">
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【学籍番号】</p>
+                    </div>
+                    <div class="col-3 px-0">
+                        <input type="text" name="student_id" value="" class="form-control m-0 py-4 align-middle" placeholder="学籍番号">
+                    </div>
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【氏名】</p>
+                    </div>
+                    <div class="col-3 px-0">
+                        <input type=ztext" name="name" value="{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}" class="form-control m-0 py-4 align-middle" readonly>
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【日付】</p>
+                    </div>
+                    <div class="col-9 px-0">
+                        <input type="date" name="date" value="" class="form-control m-0 py-4 align-middle" placeholder="日付">
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【科目名】</p>
+                    </div>
+                    <div class="col-3 px-0">
+                        <input type="text" name="subject" value="" class="form-control m-0 py-4 align-middle" placeholder="科目名">
+                    </div>
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【担当教師名】</p>
+                    </div>
+                    <div class="col-3 px-0">
+                        <input type="text" name="teacher" value="" class="form-control m-0 py-4 align-middle" placeholder="担当教師名">
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【企業名】</p>
+                    </div>
+                    <div class="col-9 px-0">
+                        <input type="text" name="company_name" value="" class="form-control m-0 py-4 align-middle" placeholder="企業名">
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【場所】</p>
+                    </div>
+                    <div class="col-9 px-0">
+                        <input type="text" name="location" value="" class="form-control m-0 py-4 align-middle" placeholder="場所">
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【内容】</p>
+                    </div>
+                    <div class="col-9 px-0">
+                        <input type="text" name="content" value="" class="form-control m-0 py-4 align-middle" placeholder="内容">
+                    </div>
+                </div>
+
                 <button class="btn btn-lg btn-primary btn-block w-100" type="submit">申請</button>
             </form>
         </div><!-- row -->

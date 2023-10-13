@@ -38,7 +38,7 @@ class ApplyController extends Controller
         $apply->content = $request->input('content');
         $apply->save();
 
-        return view('apply.leave_application_complete'); ;
+        return view('apply.leave_application_complete', compact('apply'));
     }
 
 }

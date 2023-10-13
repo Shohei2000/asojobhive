@@ -21,68 +21,78 @@
         <div class="row">
 
             <p class="h2 my-4">公欠申請が完了しました。</p>
-            <form method="POST" action="{{ route('apply.leaveApplication') }}">
-                @csrf
-                <table class="table">
-                    <tbody>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【学科名】</td>
-                            <td class="py-4">
-                                <input type="text" name="department_name" value="" class="form-control" placeholder="学科名">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【学籍番号】</td>
-                            <td class="py-4">
-                                <input type="text" name="student_number" value="" class="form-control" placeholder="学籍番号">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【氏名】</td>
-                            <td class="py-4">
-                                <input type="text" name="name" value="{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}" class="form-control" readonly>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【日付】</td>
-                            <td class="py-4">
-                                <input type="date" name="date" value="" class="form-control" placeholder="日付">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【科目名】</td>
-                            <td class="py-4">
-                                <input type="text" name="subject_name" value="" class="form-control" placeholder="科目名">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【担当教師名】</td>
-                            <td class="py-4">
-                                <input type="text" name="teacher_name" value="" class="form-control" placeholder="担当教師名">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【企業名】</td>
-                            <td class="py-4">
-                                <input type="text" name="company_name" value="" class="form-control" placeholder="企業名">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【場所】</td>
-                            <td class="py-4">
-                                <input type="text" name="place" value="" class="form-control" placeholder="場所">
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="detail-td-15 py-4 align-middle">【内容】</td>
-                            <td class="py-4">
-                                <input type="text" name="content" value="" class="form-control" placeholder="内容">
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <button class="btn btn-lg btn-primary btn-block w-100" type="submit">申請</button>
-            </form>
+            <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【学科名】</p>
+                    </div>
+                    <div class="col-9 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->department }}</p>
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【学籍番号】</p>
+                    </div>
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->student_id }}</p>
+                    </div>
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【氏名】</p>
+                    </div>
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->name }}</p>
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【日付】</p>
+                    </div>
+                    <div class="col-9 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->date }}</p>
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【科目名】</p>
+                    </div>
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->subject }}</p>
+                    </div>
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【担当教師名】</p>
+                    </div>
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->teacher }}</p>
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【企業名】</p>
+                    </div>
+                    <div class="col-9 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->company_name }}</p>
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【場所】</p>
+                    </div>
+                    <div class="col-9 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->location }}</p>
+                    </div>
+                </div>
+                <div class="row border-bottom">
+                    <div class="col-3 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">【内容】</p>
+                    </div>
+                    <div class="col-9 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->content }}</p>
+                    </div>
+                </div>
+        </div><!-- row -->
+        <!-- ホームに戻る -->
+        <div class="row">
+            <a href="{{ route('home') }}" class="btn btn-primary btn-gradient my-4">ホームに戻る</a>
         </div><!-- row -->
     </div><!-- container -->
 
