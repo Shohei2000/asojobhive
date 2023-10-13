@@ -12,6 +12,9 @@ use App\Http\Controllers\QuestionController;//質問用
 use App\Http\Controllers\SuggestController;//オートコンプリート用
 use App\Http\Controllers\BookmarkController;//ブックマーク用
 
+use App\Http\Controllers\ApplyController;//公欠申請用
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -89,4 +92,10 @@ Route::middleware(['auth'])->group(function () {
 
     //検索サジェスト
     Route::get('/autocomplete',[SuggestController::class,'suggest']);
+
+    //公欠申請画面
+    Route::get('apply/leave_application', [ApplyController::class, 'showLeaveApplication'])->name('apply.showLeaveApplication');
+
+    //公欠申請処理
+    Route::post('apply/leave_application_complete', [ApplyController::class, 'leaveApplication'])->name('apply.leaveApplication');
 });
