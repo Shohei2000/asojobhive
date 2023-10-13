@@ -19,24 +19,16 @@
     <div class="container my-4" style="width:85%; text-align: -webkit-center;">
 
         <div class="row">
-            <p class="h2 my-4">公欠申請</p>
-            @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul class="mb-0">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-                </ul>
-            </div>
-            @endif
-            <form method="POST" action="{{ route('apply.leaveApplicationCheck') }}">
+
+            <p class="h2 my-4">以下の内容で公欠申請をします。よろしいですか？</p>
+            <form method="POST" action="{{ route('apply.leaveApplication') }}">
                 @csrf
                 <div class="row border-bottom">
                     <div class="col-3 px-0">
                         <p class="m-0 py-4 align-middle bg-light">【学科名】</p>
                     </div>
                     <div class="col-9 px-0">
-                        <input type="text" name="department" value="" class="form-control m-0 py-4 align-middle" placeholder="学科名">
+                        <input type="text" name="department" value="{{ $request->department }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                 </div>
                 <div class="row border-bottom">
@@ -44,13 +36,13 @@
                         <p class="m-0 py-4 align-middle bg-light">【学籍番号】</p>
                     </div>
                     <div class="col-3 px-0">
-                        <input type="text" name="student_id" value="" class="form-control m-0 py-4 align-middle" placeholder="学籍番号">
+                        <input type="text" name="student_id" value="{{ $request->student_id }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                     <div class="col-3 px-0">
                         <p class="m-0 py-4 align-middle bg-light">【氏名】</p>
                     </div>
                     <div class="col-3 px-0">
-                        <input type=ztext" name="name" value="{{ Auth::user()->last_name }} {{ Auth::user()->first_name }}" class="form-control m-0 py-4 align-middle" readonly>
+                        <input type=ztext" name="name" value="{{ $request->name }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                 </div>
                 <div class="row border-bottom">
@@ -58,7 +50,7 @@
                         <p class="m-0 py-4 align-middle bg-light">【日付】</p>
                     </div>
                     <div class="col-9 px-0">
-                        <input type="date" name="date" value="" class="form-control m-0 py-4 align-middle" placeholder="日付">
+                        <input type="date" name="date" value="{{ $request->date }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                 </div>
                 <div class="row border-bottom">
@@ -66,13 +58,13 @@
                         <p class="m-0 py-4 align-middle bg-light">【科目名】</p>
                     </div>
                     <div class="col-3 px-0">
-                        <input type="text" name="subject" value="" class="form-control m-0 py-4 align-middle" placeholder="科目名">
+                        <input type="text" name="subject" value="{{ $request->subject }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                     <div class="col-3 px-0">
                         <p class="m-0 py-4 align-middle bg-light">【担当教師名】</p>
                     </div>
                     <div class="col-3 px-0">
-                        <input type="text" name="teacher" value="" class="form-control m-0 py-4 align-middle" placeholder="担当教師名">
+                        <input type="text" name="teacher" value="{{ $request->teacher }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                 </div>
                 <div class="row border-bottom">
@@ -80,7 +72,7 @@
                         <p class="m-0 py-4 align-middle bg-light">【企業名】</p>
                     </div>
                     <div class="col-9 px-0">
-                        <input type="text" name="company_name" value="" class="form-control m-0 py-4 align-middle" placeholder="企業名">
+                        <input type="text" name="company_name" value="{{ $request->company_name }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                 </div>
                 <div class="row border-bottom">
@@ -88,7 +80,7 @@
                         <p class="m-0 py-4 align-middle bg-light">【場所】</p>
                     </div>
                     <div class="col-9 px-0">
-                        <input type="text" name="location" value="" class="form-control m-0 py-4 align-middle" placeholder="場所">
+                        <input type="text" name="location" value="{{ $request->location }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                 </div>
                 <div class="row border-bottom">
@@ -96,7 +88,7 @@
                         <p class="m-0 py-4 align-middle bg-light">【内容】</p>
                     </div>
                     <div class="col-9 px-0">
-                        <input type="text" name="content" value="" class="form-control m-0 py-4 align-middle" placeholder="内容">
+                        <input type="text" name="content" value="{{ $request-> content }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                 </div>
 
