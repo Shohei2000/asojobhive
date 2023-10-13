@@ -16,23 +16,22 @@
     <body>
         <header>@include('header')</header>
         <div class="box-1">
-            <h2 class="titel-1">質問詳細</h2>
-            <p class="p-1">質問タイトル: {{ $question->question_title }}</p>
-            <p class="p-2">質問内容: {{ $question->question_content }}</p>
-        <div>
-            <h2>返信投稿</h2>
-            <form action="{{ route('companies.reply_submit') }}" method="POST">
-                @csrf
-                <input type="hidden" name="question_id" value="{{ $question->id }}">
-                <textarea name="reply_content" id="reply_content" cols="30" rows="5" required></textarea>
-                <button type="submit">返信する</button>
-            </form>
+            <h2 class="title-1">質問詳細</h2>
+            <div class="question-info">
+                <p class="question-label">質問タイトル:</p>
+                <p class="question-text">{{ $question->question_title }}</p>
+            </div>
+            <div class="question-info">
+                <p class="question-label">質問内容:</p>
+                <p class="question-text">{{ $question->question_content }}</p>
+            </div>
         </div>
+
 
         <div class="form-box">
             <h2 class="title-2">返信投稿</h2>
             <div class="box_con">
-                <form action="{{ route('job_posts.reply_submit') }}" method="POST">
+                <form action="{{ route('companies.reply_submit') }}" method="POST">
                     @csrf
                     <input type="hidden" name="question_id" value="{{ $question->id }}" class="input-1">
                     <textarea class="area-1" name="reply_content" id="reply_content" cols="30" rows="5" required></textarea>
@@ -40,27 +39,31 @@
                 </form>
             </div>
         </div>
-
         <div class="d3-3">
             <h3 class="title-3">回答一覧</h3>
             @if ($replies->isNotEmpty())
-                <ul>
+                <ul class="reply-list">
                     @foreach ($replies as $reply)
-                        <li>{{ $reply->reply_content }}</li>
+                        <li class="reply-item">・ {{ $reply->reply_content }}</li>
                     @endforeach
                 </ul>
             @else
-                <p class="p-3">回答はまだありません。</p>
+                <p class="no-reply-msg">回答はまだありません。</p>
             @endif
         </div>
 
-        <!-- 前の画面へ戻る -->
-        <button onclick="goBack()" class="back_btn">戻る</button>
-        <script>
-            function goBack() {
-                window.history.back();
-            }
-        </script>
+    <!-- 前の画面へ戻る -->
+    <button class="btn-back" onclick="goBackToDetailsPage({{ $company->id }})">戻る</button>
+
+    <script>
+        function goBackToDetailsPage(companyId) {
+            // 動的なURLを生成
+            var dynamicURL = 'http://127.0.0.1:8000/companies/' + companyId + '/questions';
+
+            // ページ遷移
+            window.location.href = dynamicURL;
+        }
+    </script>
 
         <!-- JavaScript -->
         <script src="{{ asset('js/app.js') }}" defer></script>

@@ -22,9 +22,9 @@ class QuestionController extends Controller
         $company = Company::findOrFail($companyId);
         $questions = $company->questions;
 
-        if ($questions->isEmpty()) {
-            abort(404, 'Questions not found');
-        }
+        //if ($questions->isEmpty()) {
+        //  abort(404, 'Questions not found');
+        //}
 
         $questionIds = $questions->pluck('id');
         $replies = CompanyQuestionReply::whereIn('company_question_id', $questionIds)->get();
@@ -92,18 +92,18 @@ class QuestionController extends Controller
     }
 
     /**
-     * いらないやつかも（調査中）
+     * 質問の詳細画面を表示
      *
-     * @param Request $request
+     * @param int $companyId
      * @param int $questionId
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Support\Renderable
      */
     public function showQuestion($companyId, $questionId)
     {
         $company = Company::findOrFail($companyId);
-        $question = $company->questions()->findOrFail($questionId);
-        $replies = $question->replies;
+        $question = CompanyQuestion::findOrFail($questionId);
+        $replies = CompanyQuestionReply::where('company_question_id', $questionId)->get();
 
-        return view('jobs.question', compact('question', 'replies'));
+        return view('jobs.question', compact('company', 'question', 'replies'));
     }
 }

@@ -16,10 +16,10 @@
 <body>
     <header>@include('header')</header>
     <h1 class="title-1">質問一覧</h1>
+    <div class="btn-container">
+            <a href="{{ route('companies.question_form', ['companyId' => $company->id]) }}" class="btn-primary">質問を投稿する</a>
+    </div>
     @if ($questions->isNotEmpty())
-        <div class="btn-container">
-            <a href="{{ route('job_posts.question_form', ['companyId' => $company->id]) }}" class="btn-primary">質問を投稿する</a>
-        </div>
         <table>
             <thead>
                 <tr class="tr_title">
@@ -34,23 +34,31 @@
                 <tr>
                     <td>{{ $question->question_title }}</td>
                     <td>{{ $question->question_content }}</td>
-                    <td><a class="a_link"href="{{ route('job_posts.question', ['companyId' => $company->id, 'questionId' => $question->id]) }}">詳細へ</a></td>
+                    <td><a class="a_link"href="{{ route('companies.question', ['companyId' => $company->id, 'questionId' => $question->id]) }}">詳細へ</a></td>
                 </tr>
             @endforeach
             </tbody>
         </table>
     @else
-        <p>質問が見つかりませんでした。</p>
+    <div class="no-questions-message" style="background-color: #f2f2f2; padding: 20px; border-radius: 10px; text-align: center;">
+        <p style="font-size: 20px; font-weight: bold; color: #333;">質問はまだありません</p>
+    </div>
     @endif
 
     <!-- 前の画面へ戻る -->
     <div class="btn-container">
-        <button class="btn-back" onclick="goBack()">戻る</button>
+        <button class="btn-back" onclick="goBackToDetailsPage({{ $company->id }})">戻る</button>
     </div>
+
     <script>
-        function goBack() {
-            window.history.back();
+        function goBackToDetailsPage(companyId) {
+            // 動的なURLを生成
+            var dynamicURL = 'http://127.0.0.1:8000/companies/' + companyId + '/detail';
+
+            // ページ遷移
+            window.location.href = dynamicURL;
         }
     </script>
+
 </body>
 </html>

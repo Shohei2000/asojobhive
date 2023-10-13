@@ -7,23 +7,74 @@ body {
     padding: 0;
 }
 
-/* 全体のスタイル */
+/* ボックス1のスタイル */
 .box-1 {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px;
+    border-radius: 8px;
 }
 
 .title-1 {
     font-size: 24px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.p-1,
-.p-2 {
-    margin: 10px 0;
+.question-info {
+    margin-bottom: 15px;
 }
+
+.question-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.question-text {
+    font-size: 18px;
+    color: #333;
+}
+/* ボックス3のスタイル */
+.d3-3 {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.title-3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* 回答一覧のスタイル */
+.reply-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reply-item {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.no-reply-msg {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #555;
+}
+
+
+/* 戻るボタンのスタイル（他のボタンと同じスタイル） */
+
+
+
 
 .form-box {
     background-color: #fff;
@@ -63,32 +114,11 @@ body {
     background-color: #0e71a1;
 }
 
-.d3-3 {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 20px;
-}
-
-.title-3 {
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    margin-bottom: 10px;
-}
-
 .p-3 {
     margin: 10px 0;
 }
 
-.back_btn {
+.btn-back {
     background-color: #fff;
     color: #1da1f2;
     border: 1px solid #1da1f2;
@@ -96,10 +126,12 @@ ul li {
     border-radius: 5px;
     text-decoration: none;
     text-align: center;
+    display: inline-block;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
 }
 
-.back_btn:hover {
+.btn-back:hover {
     background-color: #f5f8fa;
 }
