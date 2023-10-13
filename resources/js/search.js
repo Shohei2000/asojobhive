@@ -2,7 +2,7 @@
 $(document).ready(function() {
     $("#searchInput").on("input", function() {
         var keyword = $(this).val();
-        
+
         $.ajax({
             url: "/autocomplete",
             method: "GET",

@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-gradient rounded-bottom" style="background-color: dodgerblue;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{{ route('home') }}" style="width:10%;">
+    <a class="navbar-brand" href="{{ route('home') }}" style="width:8rem;">
       <img src="{{ asset('images/asojobhive_logo.png') }}" alt="asojobhive_logo" class="d-inline-block align-text-top w-100">
     </a>
 
@@ -35,7 +35,6 @@
       </form>
       <script src="{{ asset('js/app.js') }}"></script>
       <script src="{{ asset('js/search.js') }}"></script>
-
 
       <form action="{{ route('logout') }}" method="POST" style="padding-left:1rem;">
         @csrf

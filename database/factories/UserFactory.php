@@ -31,6 +31,7 @@ class UserFactory extends Factory
             'created_at' => $this->faker->dateTimeThisDecade,
             'updated_at' => $this->faker->dateTimeThisYear,
             'remember_token' => null,
+            'class_id' => '1',
         ];
     }
 
