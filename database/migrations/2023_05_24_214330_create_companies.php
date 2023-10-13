@@ -38,6 +38,7 @@ class CreateCompanies extends Migration
             $table->integer('branch_count')->nullable();
             $table->integer('office_count')->nullable();
             $table->string('website_url')->nullable();
+            $table->longText('sharepoint_url')->nullable();
             $table->timestamps();
         });
     }
