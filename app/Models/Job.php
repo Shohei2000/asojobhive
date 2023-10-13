@@ -13,6 +13,7 @@ class Job extends Model
         'job_description',
         'job_vacancies',
         'work_location',
+        'supplement',
     ];
 
     public function company()

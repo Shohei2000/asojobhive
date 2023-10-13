@@ -7,6 +7,7 @@
     <title>企業詳細</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    
     <!-- ビューファイル内の<head>セクション内に以下のスクリプトを追加 -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -32,6 +33,12 @@
                         <td class="detail-td-15 py-4 align-middle">【企業URL】</td>
                         <td class="py-4">
                             <a class="" target="_blank" href="{{ $company->website_url }}">{{ $company->website_url }}</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="detail-td-15 py-4 align-middle">【学校求人情報URL】</td>
+                        <td class="py-4">
+                            <a class="" target="_blank" href="{{ $company->sharepoint_url }}">{{ $company->sharepoint_url }}</a>
                         </td>
                     </tr>
                     <tr>
