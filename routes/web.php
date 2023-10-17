@@ -13,6 +13,8 @@ use App\Http\Controllers\SuggestController;//オートコンプリート用
 use App\Http\Controllers\BookmarkController;//ブックマーク用
 
 use App\Http\Controllers\ApplyController;//公欠申請用
+use App\Http\Controllers\CalendarController;//カレンダー用
+
 
 
 
@@ -101,4 +103,7 @@ Route::middleware(['auth'])->group(function () {
 
     //公欠申請処理
     Route::post('apply/leave_application_complete', [ApplyController::class, 'leaveApplication'])->name('apply.leaveApplication');
+
+    //カレンダーのデータ取得
+    Route::get('get_events', [CalendarController::class, 'getEvents'])->name('getEvents');
 });
