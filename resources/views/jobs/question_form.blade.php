@@ -15,7 +15,7 @@
     <body>
         <header>@include('header')</header>
         <div class="box_con">
-            <form action="{{ route('job_posts.store_question', $company->id) }}" method="POST">
+            <form action="{{ route('companies.store_question', $company->id) }}" method="POST">
                 @csrf
                 <ul class="Form">
                     <li>
@@ -36,12 +36,19 @@
                 </ul>
             </form>
         </div>
-        <!-- 前の画面へ戻る -->
-        <button onclick="goBack()" class="btn-back">戻る</button>
-        <script>
-            function goBack() {
-                window.history.back();
-            }
-        </script>
+    <!-- 前の画面へ戻る -->
+    <div class="btn-container">
+        <button class="btn-back" onclick="goBackToDetailsPage({{ $company->id }})">戻る</button>
+    </div>
+
+    <script>
+        function goBackToDetailsPage(companyId) {
+            // 動的なURLを生成
+            var dynamicURL = 'http://127.0.0.1:8000/companies/' + companyId + '/questions';
+
+            // ページ遷移
+            window.location.href = dynamicURL;
+        }
+    </script>
     </body>
 </html>
