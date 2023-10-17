@@ -19,7 +19,7 @@ body {
 .title-1 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: #1da1f2;
 }
 
 .question-info {
@@ -29,7 +29,7 @@ body {
 .question-label {
     font-weight: bold;
     margin-bottom: 5px;
-    color: #555;
+    color: #1da1f2;
 }
 
 .question-text {
@@ -37,7 +37,7 @@ body {
     color: #333;
 }
 /* ボックス3のスタイル */
-.d3-3 {
+.box-3 {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -48,7 +48,7 @@ body {
 .title-3 {
     font-size: 24px;
     margin-bottom: 20px;
-    color: #333;
+    color: #1da1f2;
 }
 
 /* 回答一覧のスタイル */
@@ -69,23 +69,19 @@ body {
     font-size: 18px;
     color: #555;
 }
-
-
-/* 戻るボタンのスタイル（他のボタンと同じスタイル） */
-
-
-
-
+/* ボックス2のスタイル */
 .form-box {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
     margin: 20px;
+    border-radius: 8px;
 }
 
 .title-2 {
     font-size: 24px;
     margin-bottom: 10px;
+    color: #1da1f2;
 }
 
 .box_con {
@@ -117,7 +113,7 @@ body {
 .p-3 {
     margin: 10px 0;
 }
-
+/* バックボタンのスタイル */
 .btn-back {
     background-color: #fff;
     color: #1da1f2;

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>質問</title>
+    <title>質問一覧</title>
     <!-- JavaScript -->
     <script src="{{ asset('js/app.js') }}" defer></script>
     <!-- CSS -->
@@ -15,7 +15,7 @@
 </head>
 <body>
     <header>@include('header')</header>
-    <h1 class="title-1">質問一覧</h1>
+    <!-- 質問一覧 -->
     <div class="btn-container">
             <a href="{{ route('companies.question_form', ['companyId' => $company->id]) }}" class="btn-primary">質問を投稿する</a>
     </div>
@@ -25,8 +25,7 @@
                 <tr class="tr_title">
                     <th>タイトル</th>
                     <th>質問内容</th>
-                    <th> </th>
-                    <!--<th>詳細へ</th>-->
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -40,8 +39,9 @@
             </tbody>
         </table>
     @else
-    <div class="no-questions-message" style="background-color: #f2f2f2; padding: 20px; border-radius: 10px; text-align: center;">
-        <p style="font-size: 20px; font-weight: bold; color: #333;">質問はまだありません</p>
+    <!-- 質問がない場合 -->
+    <div class="no-questions-message" style="background-color: #fff; padding: 20px; margin: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); border-radius: 8px; text-align: center;">
+        <p style="font-size: 20px; font-weight: bold; color: #333;">質問はまだないようです！</p>
     </div>
     @endif
 

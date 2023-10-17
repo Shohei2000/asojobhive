@@ -7,21 +7,20 @@ body {
     margin: 0;
     padding: 0;
 }
-
-
-/* Form Styles */
-.box_con {
+/* Container Styles */
+.box {
     background-color: #fff;
-    border: 1px solid #e1e8ed; /* Twitterのフォームボーダーに似せています */
+    border: 1px solid #e1e8ed;
     padding: 20px;
     margin: 20px;
+    border-radius: 8px;
 }
-
+/* Form Styles */
 .Form {
     list-style: none;
     padding: 0;
 }
-
+/* formタイトル */
 .Form-Item {
     margin-bottom: 20px;
 }
@@ -30,21 +29,21 @@ body {
     font-weight: bold;
     display: block;
     margin-bottom: 5px;
-    color: #1da1f2; /* Twitterのリンクカラーに似せています */
+    color: #1da1f2;
 }
 
 .Form-Item-Input,
 .Form-Item-Textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #e1e8ed; /* Twitterのフォームボーダーに似せています */
+    border: 1px solid #e1e8ed;
     border-radius: 5px;
 }
 
 .Form-Item-Textarea {
-    height: 150px; /* テキストエリアの高さを調整 */
+    height: 150px;
 }
-
+/* formボタン */
 .form_btn {
     width: 100%;
     padding: 10px;
