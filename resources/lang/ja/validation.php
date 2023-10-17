@@ -156,6 +156,15 @@ return [
     'attributes' => [
         'email' => 'メールアドレス',
         'password' => 'パスワード',
+        'department' => '学科名',
+        'student_id' => '学籍番号',
+        'name' => '氏名',
+        'date' => '日付',
+        'subject' => '科目名',
+        'teacher' => '担当教師名',
+        'company_name' => '企業名',
+        'location' => '場所',
+        'content' => '内容',
     ],
 
 ];

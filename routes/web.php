@@ -96,6 +96,9 @@ Route::middleware(['auth'])->group(function () {
     //公欠申請画面
     Route::get('apply/leave_application', [ApplyController::class, 'showLeaveApplication'])->name('apply.showLeaveApplication');
 
+    //公欠申請確認画面
+    Route::post('apply/leave_application_check', [ApplyController::class, 'leaveApplicationCheck'])->name('apply.leaveApplicationCheck');
+
     //公欠申請処理
     Route::post('apply/leave_application_complete', [ApplyController::class, 'leaveApplication'])->name('apply.leaveApplication');
 });
