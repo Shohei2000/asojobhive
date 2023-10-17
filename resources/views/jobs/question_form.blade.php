@@ -14,7 +14,8 @@
     </head>
     <body>
         <header>@include('header')</header>
-        <div class="box_con">
+        <!-- 質問投稿 -->
+        <div class="box">
             <form action="{{ route('companies.store_question', $company->id) }}" method="POST">
                 @csrf
                 <ul class="Form">
@@ -37,9 +38,7 @@
             </form>
         </div>
     <!-- 前の画面へ戻る -->
-    <div class="btn-container">
         <button class="btn-back" onclick="goBackToDetailsPage({{ $company->id }})">戻る</button>
-    </div>
 
     <script>
         function goBackToDetailsPage(companyId) {
