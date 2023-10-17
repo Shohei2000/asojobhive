@@ -1,13 +1,13 @@
-<div class="container container-home-summary mt-5">
-    <div class="row row-home-summary d-flex justify-content-center h-100">
+<div class="container container-home-summary mt-1 mt-lg-5">
+    <div class="row row-home-summary d-flex justify-content-center h-100 px-3 px-lg-0">
 
         <!-- 日付コンテナー -->
-        <div class="col-2 mx-3 d-flex align-items-center justify-content-center bg-light bg-gradient rounded-1">
-        <p class="m-0 text-center fw-bold" style="font-size:1.5vw;">{!! $currentDate !!}</p>
+        <div class="col-lg-2 col-12 mx-3 d-flex align-items-center justify-content-center bg-light bg-gradient rounded-1">
+        <p class="m-0 text-center fw-bold py-4 py-lg-0" style="font-size:0.7rem;">{!! $currentDate !!}</p>
         </div>
 
         <!-- お気に入りコンテナー -->
-        <div class="col-2 mx-3 h-100 d-flex align-items-center justify-content-center bg-primary bg-gradient rounded-1" style="padding-top: 1rem;">
+        <div class="col-lg-2 col-12 col-sm-5 mx-3 mt-1 mt-lg-0 h-100 d-flex align-items-center justify-content-center bg-primary bg-gradient rounded-1" style="padding-top: 1rem;">
             <div class="row h-100 w-100">
                 <div class="col-12 p-0 d-flex align-items-center justify-content-between" style="height:35%">
                     <div>
@@ -33,7 +33,7 @@
         </div>
 
         <!-- 応募済み -->
-        <div class="col-2 mx-3 h-100 d-flex align-items-center justify-content-center bg-success bg-gradient rounded-1" style="padding-top: 1rem;">
+        <div class="col-lg-2 col-12 col-sm-5 mx-3 mt-1 mt-lg-0 h-100 d-flex align-items-center justify-content-center bg-success bg-gradient rounded-1" style="padding-top: 1rem;">
             <div class="row h-100 w-100">
                 <div class="col-12 p-0 d-flex align-items-center justify-content-between" style="height:35%">
                     <div>
@@ -59,7 +59,7 @@
         </div>
 
         <!-- 選考中 -->
-        <div class="col-2 mx-3 d-flex align-items-center justify-content-center bg-warning bg-gradient rounded-1" style="padding-top: 1rem;">
+        <div class="col-lg-2 col-12 col-sm-5 mx-3 mt-1 mt-lg-0 d-flex align-items-center justify-content-center bg-warning bg-gradient rounded-1" style="padding-top: 1rem;">
             <div class="row w-100">
                 <div class="col-12 p-0 d-flex align-items-center justify-content-between" style="height:35%">
                     <div>
@@ -85,7 +85,7 @@
         </div>
 
         <!-- 内定済み -->
-        <div class="col-2 mx-3 h-100 d-flex align-items-center justify-content-center bg-danger bg-gradient rounded-1" style="padding-top: 1rem;">
+        <div class="col-lg-2 col-12 col-sm-5 mx-3 mt-1 mt-lg-0 h-100 d-flex align-items-center justify-content-center bg-danger bg-gradient rounded-1" style="padding-top: 1rem;">
             <div class="row h-100 w-100">
                 <div class="col-12 p-0 d-flex align-items-center justify-content-between" style="height:35%">
                     <div>

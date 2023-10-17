@@ -20,7 +20,6 @@
         <div class="row justify-content-center mb-4">
             <div class="col-auto">
                 <h2 class="m-0 border-bottom border-2 border-info">気になる企業一覧</h2>
-                <i class="fas fa-user"></i>
             </div>
         </div>
         <div class="row">
