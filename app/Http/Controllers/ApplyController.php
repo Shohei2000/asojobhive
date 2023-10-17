@@ -32,7 +32,7 @@ class ApplyController extends Controller
         //バリデーション機能
         $validator = Validator::make($request->all(),[
             'department' => 'required|string|max:255',
-            'student_id' => 'required|numeric|max:255',
+            'student_id' => 'required|numeric',
             'name' => 'required|string|max:255',
             'date' => 'required|date',
             'subject' => 'required|string|max:255',

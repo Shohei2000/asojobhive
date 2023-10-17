@@ -91,8 +91,8 @@
                 </div>
         </div><!-- row -->
         <!-- ホームに戻る -->
-        <div class="row">
-            <a href="{{ route('home') }}" class="btn btn-primary btn-gradient my-4">ホームに戻る</a>
+        <div class="row d-grid gap-2 col-3 mx-auto">
+            <a href="{{ route('home') }}" class="btn btn-lg btn-primary btn-block">ホームに戻る</a>
         </div><!-- row -->
     </div><!-- container -->
 

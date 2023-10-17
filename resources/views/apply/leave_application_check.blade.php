@@ -92,7 +92,7 @@
                     </div>
                 </div>
 
-                <button class="btn btn-lg btn-primary btn-block w-100" type="submit">申請する</button>
+                <button class="btn btn-lg btn-primary btn-block w-25" type="submit">申請する</button>
             </form>
         </div><!-- row -->
     </div><!-- container -->
