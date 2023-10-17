@@ -37,7 +37,7 @@
                     </tr>
                     <tr>
                         <td class="detail-td-15 py-4 align-middle">【学校求人情報URL】</td>
-                        <td class="py-4">
+                        <td class="py-4" style="word-break: break-word;">
                             <a class="" target="_blank" href="{{ $company->sharepoint_url }}">{{ $company->sharepoint_url }}</a>
                         </td>
                     </tr>
