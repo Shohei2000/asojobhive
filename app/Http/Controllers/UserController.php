@@ -58,4 +58,15 @@ class UserController extends Controller
          */
         return view('users.offers');
     }
+
+    public function showApplyLog()
+    {
+        /**
+         * 公欠申請履歴画面を表示.
+         *
+         * @return \Illuminate\Contracts\Support\Renderable
+         */
+        $active = "ApplyLog";
+        return view('users.apply_log',compact('active'));
+    }
 }

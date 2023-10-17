@@ -8,8 +8,8 @@
     </div>
 
 
-    <div class="col-sm-2 text-center m-tab-navigation-col">
-        <a class="a-tab" href="{{ route('home') }}">
+    <div class="col-sm-2 text-center m-tab-navigation-col {{$active === 'ApplyLog' ? 'm-tab-navigation-active' : ''}}">
+        <a class="a-tab" href="{{ route('user.applyLog') }}">
             <i class="fa-solid fa-person-circle-question fa-lg"></i>
             公欠申請履歴
         </a>
