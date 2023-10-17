@@ -23,6 +23,7 @@
         "sass-loader": "^11.0.1"
     },
     "dependencies": {
+        "fullcalendar": "^6.1.9",
         "jquery": "^3.7.0"
     },
     "name": "asojobhive",
