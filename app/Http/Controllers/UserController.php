@@ -15,7 +15,8 @@ class UserController extends Controller
          *
          * @return \Illuminate\Contracts\Support\Renderable
          */
-        return view('users.basic_profile');
+        $active = "UserDetail";
+        return view('users.basic_profile',compact('active'));
     }
 
     public function editBasicProfile()
