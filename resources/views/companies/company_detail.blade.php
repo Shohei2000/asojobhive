@@ -29,55 +29,55 @@
 
             <table class="table">
                 <tbody>
-                    <tr>
+                    <tr class="align-middle">
                         <td class="detail-td-15 py-4 align-middle">【企業URL】</td>
                         <td class="py-4">
                             <a class="" target="_blank" href="{{ $company->website_url }}">{{ $company->website_url }}</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="align-middle">
                         <td class="detail-td-15 py-4 align-middle">【学校求人情報URL】</td>
-                        <td class="py-4" style="word-break: break-word;">
-                            <a class="" target="_blank" href="{{ $company->sharepoint_url }}">{{ $company->sharepoint_url }}</a>
+                        <td class="py-4" style="word-break: break-word; vertical-align: middle;">
+                            <a class="txt-limit" target="_blank" href="{{ $company->sharepoint_url }}">{{ $company->sharepoint_url }}</a>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="align-middle">
                         <td class="detail-td-15 py-4 align-middle">【事業内容】</td>
                         <td class="py-4">
                             <p class="m-0">{{ $company->business_description }}</p>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="detail-td-15 py-4 align-middle">【本社所在地】</td>
+                    <tr class="align-middle">
+                        <td class="detail-td-15 py-4">【本社所在地】</td>
                         <td class="py-4">
                             <p class="m-0">{{ $company->headquarters_address }}</p>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="align-middle">
                         <td class="detail-td-15 py-4 align-middle">【代表者】</td>
                         <td class="py-4">
                             <p class="m-0">{{ $company->representative_position }}　{{ $company->representative_name }}</p>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="align-middle">
                         <td class="detail-td-15 py-4 align-middle">【設立】</td>
                         <td class="py-4">
                             <p class="m-0">{{ $company->established }}年</p>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="align-middle">
                         <td class="detail-td-15 py-4 align-middle">【資本金】</td>
                         <td class="py-4">
                             <p class="m-0">{{ $company->capital }}</p>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="align-middle">
                         <td class="detail-td-15 py-4 align-middle">【売上高】</td>
                         <td class="py-4">
                             <p class="m-0">{{ $company->annual_sales }}</p>
                         </td>
                     </tr>
-                    <tr>
+                    <tr class="align-middle">
                         <td class="detail-td-15 py-4 align-middle">【株式公開】</td>
                         <td class="py-4">
                             <p class="m-0">{{ $company->stocks }}</p>
@@ -121,8 +121,14 @@
 
     </div>
 
-    
+<script>
+    const limit = document.querySelector(".txt-limit");
+    const str = limit.textContent;
+    const len = 50; // 半角50字（全角約25字）
+    if (str.length > len) {
+    limit.textContent = str.substring(0, len) + "…";
+    }
+</script>
 
 </body>
 </html>
-

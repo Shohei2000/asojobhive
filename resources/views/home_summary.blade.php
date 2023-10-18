@@ -1,4 +1,4 @@
-<div class="container container-home-summary mt-1 mt-lg-5">
+<div class="container container-home-summary mt-1 mt-lg-4">
     <div class="row row-home-summary d-flex justify-content-center h-100 px-3 px-lg-0">
 
         <!-- 日付コンテナー -->
