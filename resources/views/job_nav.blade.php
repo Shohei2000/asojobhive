@@ -1,3 +1,13 @@
+@if (Session::has('success'))
+    <div class="alert alert-success">
+        {{ Session::get('success') }}
+    </div>
+@endif
+@if (Session::has('warning'))
+    <div class="alert alert-warning">
+        {{ Session::get('warning') }}
+    </div>
+@endif
 <div class="m-tab-navigation row w-100 align-items-center">
 
     <div class="col-lg-2 mb-2 mb-lg-0 text-center m-tab-navigation-col {{$active === 'CompanyDetail' ? 'm-tab-navigation-active' : ''}}">
@@ -38,34 +48,12 @@
         @endif
     </div>
 
-    <div class="col-lg-3 mb-2 mb-lg-0 text-center m-tab-navigation-col">        
-        
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
+    <div class="col-lg-3 mb-2 mb-lg-0 text-center m-tab-navigation-col">  
+        @if ($jobs === '')
+            @include('modal.entryModalSelected')
+        @else
+            @include('modal.entryModal')
+        @endif
     </div>
 
 </div>
@@ -86,7 +74,3 @@
     text-align: -webkit-right;
 }
 </style>
-
-<script>
-    
-    </script>

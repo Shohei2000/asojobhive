@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Bookmark;
+use App\Models\Entry;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -18,8 +19,9 @@ class HomeController extends Controller
     public function index()
     {
         $bookmark_count = Bookmark::where('user_id', Auth::user()->id)->count();
+        $entry_count = Entry::where('user_id', Auth::user()->id)->count();
 
         $currentDate = Carbon::now()->locale('ja_JP')->isoFormat('LL<br>dddd');
-        return view('home', ['currentDate' => $currentDate, 'bookmark_count' => $bookmark_count]);
+        return view('home', ['currentDate' => $currentDate, 'bookmark_count' => $bookmark_count, 'entry_count' => $entry_count]);
     }
 }

@@ -15,7 +15,7 @@ use App\Http\Controllers\BookmarkController;//ブックマーク用
 use App\Http\Controllers\ApplyController;//公欠申請用
 use App\Http\Controllers\CalendarController;//カレンダー用
 
-
+use App\Http\Controllers\EntryController;//応募用
 
 
 /*
@@ -86,7 +86,7 @@ Route::middleware(['auth'])->group(function () {
     //気になるリスト画面
     Route::get('/bookmarks', [BookmarkController::class, 'showBookmarks'])->name('user.showBookmarks');
     //応募済みリスト画面
-    Route::get('/entries', [UserController::class, 'showEntries'])->name('user.showEntries');
+    Route::get('/entries', [EntryController::class, 'showEntries'])->name('user.showEntries');
     //選考中リスト画面
     Route::get('/selections', [UserController::class, 'showSelections'])->name('user.showSelections');
     //内定済みリスト画面
@@ -106,4 +106,8 @@ Route::middleware(['auth'])->group(function () {
 
     //カレンダーのデータ取得
     Route::get('get_events', [CalendarController::class, 'getEvents'])->name('getEvents');
+
+    // 応募機能
+    Route::post('/entry', [EntryController::class, 'store'])->name('entry.store');
+    Route::post('/entry_restore', [EntryController::class, 'restore'])->name('entry.restore');
 });

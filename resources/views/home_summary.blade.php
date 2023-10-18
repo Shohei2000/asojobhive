@@ -45,7 +45,7 @@
                 </div>
                 <div class="col-12 p-0" style="height:40%">
                     <div class="h-100 w-100">
-                        <p class="p-0 m-0 h-100 w-100 text-light fs-2">15</p>
+                        <p class="p-0 m-0 h-100 w-100 text-light fs-2">{{ $entry_count }}</p>
                     </div>
                 </div>
                 <div class="col-12 p-0 d-flex text-center border-top border-light" style="height:25%; line-height: 2rem;">

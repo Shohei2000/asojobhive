@@ -26,8 +26,9 @@ class JobController extends Controller
 
         $bookmarks = Bookmark::where('user_id', Auth::user()->id)->get();
         $active = "JobDetail";
+        $jobs = '';
 
-       return view('jobs.job_detail', compact('company', 'job', 'bookmarks', 'active'));
+       return view('jobs.job_detail', compact('company', 'job', 'bookmarks', 'active', 'jobs'));
 
     }
 
