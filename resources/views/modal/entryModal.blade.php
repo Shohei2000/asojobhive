@@ -7,7 +7,7 @@
                 <h4><div class="modal-title" id="myModalLabel">応募確認画面</div></h4>
             </div>
 
-            <form action="{{ route('entry.store') }}" method="POST">
+            <form method="POST" action="{{ route('entry.storeEntry') }}">
                 @csrf
                 <div class="modal-body">
                     <!-- IF(応募済みじゃない時) -->
