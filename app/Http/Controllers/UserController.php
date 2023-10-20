@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
+use App\Models\Leave_application;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -59,14 +61,14 @@ class UserController extends Controller
         return view('users.offers');
     }
 
-    public function showApplyLog()
+    public function showApplyLog(Leave_application $apply)
     {
-        /**
-         * 公欠申請履歴画面を表示.
-         *
-         * @return \Illuminate\Contracts\Support\Renderable
-         */
+        // 公欠申請履歴画面を表示.
+        
+        $name = (Auth::user()->last_name . Auth::user()->first_name);
+        $leave_applications = Leave_application::all();
         $active = "ApplyLog";
-        return view('users.apply_log',compact('active'));
+
+        return view('users.apply_log',compact('active','leave_applications'));
     }
 }

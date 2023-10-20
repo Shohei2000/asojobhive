@@ -30,6 +30,25 @@
                 <div class="table-responsive">
                     <div class="container">
                         <div class="row">
+                            <div class="col-md-12">
+                                <table class="table table-bordered vertical-align-middle" style="height:25rem;">
+                                    <tbody>
+                                        <tr>
+                                            <td class="col-2 table-info">日付</td>
+                                            <td class="col-2 table-info">会社名</td>
+                                            <td class="col-2 table-info">内容</td>
+                                        </tr>
+                                        @if ($leave_applications =! empty)
+                                        @foreach ($leave_applications as $apply)
+                                            <tr>
+                                                <td class="col-2">{{ $apply->date }}</td>
+                                                <td class="col-2">{{ $apply->company_name }}</td>
+                                                <td class="col-2">{{ $apply->content }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
