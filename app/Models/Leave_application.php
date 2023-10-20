@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Leave_application extends Model
 {
     use HasFactory;
+
+    protected $table = 'leave_application';
 }
