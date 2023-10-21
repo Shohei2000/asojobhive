@@ -88,9 +88,9 @@ Route::middleware(['auth'])->group(function () {
     //応募済みリスト画面
     Route::get('/entries', [ApplicationController::class, 'showEntries'])->name('user.showEntries');
     //選考中リスト画面
-    Route::get('/selections', [UserController::class, 'showSelections'])->name('user.showSelections');
+    Route::get('/selections', [ApplicationController::class, 'showSelections'])->name('user.showSelections');
     //内定済みリスト画面
-    Route::get('/offers', [UserController::class, 'showOffers'])->name('user.showOffers');
+    Route::get('/offers', [ApplicationController::class, 'showOffers'])->name('user.showOffers');
 
     //検索サジェスト
     Route::get('/autocomplete',[SuggestController::class,'suggest']);

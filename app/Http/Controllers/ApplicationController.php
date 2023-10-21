@@ -117,4 +117,44 @@ class ApplicationController extends Controller
             $errorMessage = $e->getMessage();
         }
     }
+
+    public function showSelections()
+    {
+        /**
+         * 選考中リスト画面を表示.
+         *
+         * @return \Illuminate\Contracts\Support\Renderable
+         */
+
+        $user_id = Auth::user()->id;
+        $selections = Applications::join('companies', 'applications.company_id', '=', 'companies.id')
+                    ->join('jobs', 'applications.job_id', '=', 'jobs.id')
+                    ->where('applications.user_id', $user_id)
+                    ->wherebetween('applications.status_id', [2,7])
+                    ->select('applications.*', 'companies.company_name', 'companies.business_description', 'jobs.job_title')
+                    ->with('status') // status リレーションをロード
+                    ->get();
+
+        return view('users.selections', compact('selections'));
+    }
+
+    public function showOffers()
+    {
+        /**
+         * 内定済みリスト画面を表示.
+         *
+         * @return \Illuminate\Contracts\Support\Renderable
+         */
+
+        $user_id = Auth::user()->id;
+        $offers = Applications::join('companies', 'applications.company_id', '=', 'companies.id')
+                    ->join('jobs', 'applications.job_id', '=', 'jobs.id')
+                    ->where('applications.user_id', $user_id)
+                    ->where('applications.status_id', '8')
+                    ->select('applications.*', 'companies.company_name', 'companies.business_description', 'jobs.job_title')
+                    ->with('status') // status リレーションをロード
+                    ->get();
+
+        return view('users.offers', compact('offers'));
+    }
 }
