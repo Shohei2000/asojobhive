@@ -18599,10 +18599,23 @@ table tr td:first-child {
 }
 
 .job_card {
-  width:30%;
   background: white;
   box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.2);
   margin:0rem 0rem 2rem 0rem;
+}
+
+/* 1024px以上の画面幅の場合 */
+@media (min-width: 1024px) {
+  .job_card {
+    width:30%;
+  }
+}
+
+/* 1024px以下の画面幅の場合 */
+@media (max-width: 1024px) {
+  .job_card {
+    width: 100%;
+  }
 }
 
 .job_card_middle {

@@ -17,12 +17,14 @@ class CreateApplications extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('company_id');
-            $table->integer('status');
+            $table->unsignedBigInteger('job_id');
+            $table->integer('status_id');
             $table->timestamps();
 
             // 外部キー制約の設定
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('company_id')->references('id')->on('companies')->onDelete('cascade');
+            $table->foreign('job_id')->references('id')->on('jobs')->onDelete('cascade');
         });
     }
 

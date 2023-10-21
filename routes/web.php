@@ -15,7 +15,7 @@ use App\Http\Controllers\BookmarkController;//ブックマーク用
 use App\Http\Controllers\ApplyController;//公欠申請用
 use App\Http\Controllers\CalendarController;//カレンダー用
 
-
+use App\Http\Controllers\ApplicationController;//選考ステータス用
 
 
 /*
@@ -86,11 +86,11 @@ Route::middleware(['auth'])->group(function () {
     //気になるリスト画面
     Route::get('/bookmarks', [BookmarkController::class, 'showBookmarks'])->name('user.showBookmarks');
     //応募済みリスト画面
-    Route::get('/entries', [UserController::class, 'showEntries'])->name('user.showEntries');
+    Route::get('/entries', [ApplicationController::class, 'showEntries'])->name('user.showEntries');
     //選考中リスト画面
-    Route::get('/selections', [UserController::class, 'showSelections'])->name('user.showSelections');
+    Route::get('/selections', [ApplicationController::class, 'showSelections'])->name('user.showSelections');
     //内定済みリスト画面
-    Route::get('/offers', [UserController::class, 'showOffers'])->name('user.showOffers');
+    Route::get('/offers', [ApplicationController::class, 'showOffers'])->name('user.showOffers');
 
     //検索サジェスト
     Route::get('/autocomplete',[SuggestController::class,'suggest']);
@@ -106,4 +106,10 @@ Route::middleware(['auth'])->group(function () {
 
     //カレンダーのデータ取得
     Route::get('get_events', [CalendarController::class, 'getEvents'])->name('getEvents');
+
+    // 応募機能
+    Route::post('/entry', [ApplicationController::class, 'storeEntry'])->name('entry.storeEntry');
+
+    // ステータス更新機能
+    Route::post('/entry/update_status', [ApplicationController::class, 'updateStatus'])->name('entry.updateStatus');
 });
