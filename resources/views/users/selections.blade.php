@@ -18,7 +18,7 @@
     <div class="container mt-4">
         <div class="row justify-content-center mb-4">
             <div class="col-auto">
-                <h2 class="m-0 border-bottom border-2 border-info">選考中リスト</h2>
+                <h2 class="m-0 border-bottom border-2 border-warning">選考中リスト</h2>
             </div>
         </div>
         @if (Session::has('success'))
