@@ -10,22 +10,22 @@ jobs:
     executor: default
     steps:
       - checkout  # リポジトリのコードをチェックアウト
-      - run:
-          name: Install PHP Dependencies
-          command: |
-            composer install --ignore-platform-reqs  # Laravelプロジェクトの依存関係をインストール（PHPのバージョン要求を無視）
-      - run:
-          name: Install Node.js Dependencies
-          command: |
-            npm install  # Laravelのフロントエンド依存関係をインストール
-      - run:
-          name: Build Assets
-          command: |
-            npm run production  # フロントエンドアセットのビルド
-      - run:
-          name: Database Migrations
-          command: |
-            php artisan migrate --force  # データベースマイグレーション
+      # - run:
+      #     name: Install PHP Dependencies
+      #     command: |
+      #       composer install --ignore-platform-reqs  # Laravelプロジェクトの依存関係をインストール（PHPのバージョン要求を無視）
+      # - run:
+      #     name: Install Node.js Dependencies
+      #     command: |
+      #       npm install  # Laravelのフロントエンド依存関係をインストール
+      # - run:
+      #     name: Build Assets
+      #     command: |
+      #       npm run production  # フロントエンドアセットのビルド
+      # - run:
+      #     name: Database Migrations
+      #     command: |
+      #       php artisan migrate --force  # データベースマイグレーション
 
       # ここからデプロイステップ
       - run:
