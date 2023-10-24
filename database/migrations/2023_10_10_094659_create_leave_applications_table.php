@@ -18,7 +18,8 @@ class CreateLeaveApplicationsTable extends Migration
             $table->string('department'); // 学科
             $table->string('student_id'); // 学籍番号
             $table->string('name'); // 名前
-            $table->date('date'); // 日付
+            $table->datetime('start_date')->default(now());
+            $table->datetime('end_date')->default(now());
             $table->string('subject'); // 科目名
             $table->string('teacher'); // 教員名
             $table->string('company_name'); // 企業名
