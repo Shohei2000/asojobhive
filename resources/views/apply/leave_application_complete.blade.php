@@ -47,8 +47,14 @@
                     <div class="col-3 px-0">
                         <p class="m-0 py-4 align-middle bg-light">【日付】</p>
                     </div>
-                    <div class="col-9 px-0">
-                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->date }}</p>
+                    <div class="col-4 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->start_date }}</p>
+                    </div>
+                    <div class="col-1 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">~</p>
+                    </div>
+                    <div class="col-4 px-0">
+                        <p class="m-0 py-4 align-middle bg-light border">{{ $apply->end_date }}</p>
                     </div>
                 </div>
                 <div class="row border-bottom">

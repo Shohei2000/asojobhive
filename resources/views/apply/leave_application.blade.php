@@ -58,13 +58,13 @@
                         <p class="m-0 py-4 align-middle bg-light">【日付】</p>
                     </div>
                     <div class="col-4 px-0">
-                        <input type="date" name="start_date" value="" class="form-control m-0 py-4 align-middle">
+                        <input type="datetime-local" name="start_date" value="" class="form-control m-0 py-4 align-middle">
                     </div>
                     <div class="col-1 px-0">
                         <p class="m-0 py-4 align-middle bg-light">~</p>
                     </div>
                     <div class="col-4 px-0">
-                    <input type="date" name="end_date" value="" class="form-control m-0 py-4 align-middle">
+                        <input type="datetime-local" name="end_date" value="" class="form-control m-0 py-4 align-middle">
                     </div>
                 </div>
                 <div class="row border-bottom">
