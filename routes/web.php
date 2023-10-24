@@ -57,7 +57,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/basic_profile/edit', [UserController::class, 'editBasicProfile'])->name('user.editBasicProfile');
     //登録情報更新処理
     Route::post('/edit', [AuthController::class, 'editCheck'])->name('edit.check');
-  
+
     //企業一覧画面
     Route::get('/companies', [CompanyController::class, 'showCompanies'])->name('companies.show');
     //企業詳細画面
@@ -82,7 +82,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/bookmark_store', [BookmarkController::class, 'store'])->name('bookmark.store');
     //ブックマック削除機能
     Route::post('/bookmark_restore', [BookmarkController::class, 'restore'])->name('bookmark.restore');
-    
+
     //気になるリスト画面
     Route::get('/bookmarks', [BookmarkController::class, 'showBookmarks'])->name('user.showBookmarks');
     //応募済みリスト画面

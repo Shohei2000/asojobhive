@@ -1,0 +1,33 @@
+/* CSSファイル内 */
+
+/* 通知一覧の親要素 */
+.div-scrollable {
+    max-height: 300px; /* スクロール可能な最大高さ */
+    overflow-y: auto; /* 縦スクロールを有効にする */
+}
+
+/* 通知リスト */
+ul.notifications {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* 各通知項目 */
+li.notification {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* 通知のコンテンツ */
+.notification-content {
+    font-weight: bold;
+}
+
+/* タイムスタンプ */
+.notification-timestamp {
+    font-size: 0.8em;
+    color: #777;
+}

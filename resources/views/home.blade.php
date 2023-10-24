@@ -16,6 +16,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/calendar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
     <!-- Script -->
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
@@ -39,13 +40,30 @@
             </div>
             <div class="col-6 h-100 d-flex flex-column align-items-start justify-content-between">
                 <div class="row w-100 d-flex justify-content-start order-1" style="height:45%;">
-                    <div class="col-12 h-100 border rounded-1" style="width:90%;">
-                        
+                    <div class="col-12 h-100 border rounded-1 div-scrollable" style="width:90%;">
+                        <div class="container">
+                            <h1>通知一覧</h1>
+                            @if ($notifications->isNotEmpty())
+                                <ul class="notifications">
+                                    @foreach ($notifications ?? [] as $notification)
+                                        <li class="notification">
+                                            <div class="notification-content">
+                                                {{ $notification->message }}
+                                            </div>
+                                            <div class="notification-timestamp">
+                                                {{ $notification->created_at }}
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @else
+                                <p>通知はありません。</p>
+                            @endif
+                        </div>
                     </div>
                 </div>
                 <div class="row w-100 d-flex justify-content-start order-2"  style="height:45%;">
                     <div class="col-12 h-100 border rounded-1" style="width:90%;">
-                        
                     </div>
                 </div>
             </div>
