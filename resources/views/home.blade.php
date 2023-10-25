@@ -16,6 +16,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/calendar.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
     <link href='fullcalendar/main.css' rel='stylesheet' />
     <script src='fullcalendar/main.js'></script>
@@ -42,14 +43,27 @@
                 @include('calendar')
             </div>
             <div class="col-6 h-100 d-flex flex-column align-items-start justify-content-between">
-                <div class="row w-100 d-flex justify-content-start order-1" style="height:45%;">
-                    <div class="col-12 h-100 border rounded-1" style="width:90%;">
-                        
-                    </div>
-                </div>
-                <div class="row w-100 d-flex justify-content-start order-2"  style="height:45%;">
-                    <div class="col-12 h-100 border rounded-1" style="width:90%;">
-                        
+                <div class="row w-100 d-flex justify-content-start order-1" style="height:100%;">
+                    <h1>通知一覧</h1>
+                    <div class="col-12 h-100 border rounded-1 div-scrollable" style="width: 100%;">
+                        <div class="container">
+                            @if ($notifications->isNotEmpty())
+                                <ul class="notifications">
+                                    @foreach ($notifications ?? [] as $notification)
+                                        <li class="notification">
+                                            <div class="notification-content">
+                                                {{ $notification->message }}
+                                            </div>
+                                            <div class="notification-timestamp">
+                                                {{ $notification->created_at }}
+                                            </div>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            @else
+                                <p>通知はありません。</p>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>

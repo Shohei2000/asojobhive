@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bookmark;
 use App\Models\Applications;
+use App\Models\Notification;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -18,6 +19,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        #通知一覧表示
+        $notifications = Notification::orderBy('created_at', 'desc')->get();
+
         $bookmark_count = Bookmark::where('user_id', Auth::user()->id)->count();
 
         $entry_count = Applications::where('user_id', Auth::user()->id)->
@@ -32,6 +36,6 @@ class HomeController extends Controller
                         ->count();
 
         $currentDate = Carbon::now()->locale('ja_JP')->isoFormat('LL<br>dddd');
-        return view('home', ['currentDate' => $currentDate, 'bookmark_count' => $bookmark_count, 'entry_count' => $entry_count, 'selection_count' => $selection_count, 'offer_count' => $offer_count]);
+        return view('home', ['currentDate' => $currentDate, 'bookmark_count' => $bookmark_count, 'entry_count' => $entry_count, 'selection_count' => $selection_count, 'offer_count' => $offer_count, 'notifications' => $notifications]);
     }
 }
