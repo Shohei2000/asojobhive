@@ -34,18 +34,23 @@
                                 <table class="table table-bordered vertical-align-middle" style="height:25rem;">
                                     <tbody>
                                         <tr>
+                                            <td class="col-1 table-info"></td>
                                             <td class="col-2 table-info">日付</td>
                                             <td class="col-2 table-info">会社名</td>
                                             <td class="col-2 table-info">内容</td>
                                         </tr>
                                         @if ($leave_applications =! empty)
-                                        @foreach ($leave_applications as $apply)
-                                            <tr>
-                                                <td class="col-2">{{ $apply->date }}</td>
-                                                <td class="col-2">{{ $apply->company_name }}</td>
-                                                <td class="col-2">{{ $apply->content }}</td>
-                                            </tr>
-                                        @endforeach
+                                            @foreach ($leave_applications as $apply)
+                                                <tr>
+                                                    <td class="col-2">
+                                                        <button type="submit" class="btn btn-primary {{ $apply->id }}" onclick="location.href='/apply/{{ $apply->id }}/detail'">
+                                                    </td>
+                                                    <td class="col-2">{{ $apply->date }}</td>
+                                                    <td class="col-2">{{ $apply->company_name }}</td>
+                                                    <td class="col-2">{{ $apply->content }}</td>
+                                                </tr>
+                                            @endforeach
+                                        @endif
                                     </tbody>
                                 </table>
                             </div>
