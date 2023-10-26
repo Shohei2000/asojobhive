@@ -65,10 +65,33 @@ class UserController extends Controller
     {
         // 公欠申請履歴画面を表示.
         
-        $name = (Auth::user()->last_name . Auth::user()->first_name);
-        $leave_applications = Leave_application::all();
+        $name = (Auth::user()->last_name ." ". Auth::user()->first_name);
+        $leave_applications = Leave_application::where('name', $name)->get();
         $active = "ApplyLog";
 
         return view('users.apply_log',compact('active','leave_applications'));
+    }
+
+    public function showApplyLogDetail(Leave_application $apply)
+    {
+
+        // 公欠申請履歴詳細画面を表示.
+        $leave_application = Leave_application::where('id', $apply->id)->first();
+
+        $active = "ApplyLog";
+
+        return view('users.apply_log_detail',compact('active','leave_application'));
+    }
+
+    public function deleteApplyLog(Request $request)
+    {
+        // 公欠申請履歴削除処理
+        $leave_application = Leave_application::where('id', $request->id)->first();
+        $leave_application->delete();
+
+        //削除されましたアラートを表示
+        session()->flash('flash_message', '削除されました');
+
+        return redirect()->route('user.applyLog');
     }
 }

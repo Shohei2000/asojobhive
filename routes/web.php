@@ -55,6 +55,10 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/basic_profile/edit', [UserController::class, 'editBasicProfile'])->name('user.editBasicProfile');
     //公欠申請履歴画面
     Route::get('/apply_log',[UserController::class,'showApplyLog'])->name('user.applyLog');
+    //公欠申請履歴詳細画面
+    Route::get('/apply_log/{apply}/detail',[UserController::class,'showApplyLogDetail'])->name('user.applyLogDetail');
+    //公欠申請履歴削除処理
+    Route::post('/apply_log/delete',[UserController::class,'deleteApplyLog'])->name('user.deleteApplyLog');
     //登録情報更新処理
     Route::post('/edit', [AuthController::class, 'editCheck'])->name('edit.check');
   

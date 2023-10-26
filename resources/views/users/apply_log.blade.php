@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>プロファイル</title>
+    <title>公欠申請履歴</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- ビューファイル内の<head>セクション内に以下のスクリプトを追加 -->
@@ -25,6 +25,11 @@
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="m-0 p-0 px-3 lh-3rem">公欠申請履歴</h3>
                     </div>
+                    @if (session('flash_message'))
+                        <div class="alert alert-success text-center w-100 mx-0 my-2" role="alert">
+                            {{ session('flash_message') }}
+                        </div>
+                    @endif
                 </div>
 
                 <div class="table-responsive">
@@ -43,7 +48,7 @@
                                                 <tr>
                                                     <td class="col-2 ">
                                                         <button type="submit" class="btn btn-primary btn-sm w-100" 
-                                                        onclick="location.href='/apply/{{ $apply->id }}/detail'">
+                                                        onclick="location.href='/apply_log/{{ $apply->id }}/detail'">
                                                             詳細
                                                         </button>
                                                     </td>
