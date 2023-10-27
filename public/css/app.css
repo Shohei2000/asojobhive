@@ -18621,3 +18621,12 @@ table tr td:first-child {
 .job_card_middle {
   margin:0rem 2.5rem 2rem 2.5rem;
 }
+
+.leave_btn_div {
+  padding: 2rem 0 3rem 0;
+}
+
+.leave_btn {
+
+  margin: 2rem 0 3rem 0;
+}

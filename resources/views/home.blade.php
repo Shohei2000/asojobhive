@@ -45,7 +45,7 @@
             <div class="col-6 h-100 d-flex flex-column align-items-start justify-content-between">
                 <div class="row w-100 d-flex justify-content-start order-1" style="height:100%;">
                     <h1>通知一覧</h1>
-                    <div class="col-12 h-100 border rounded-1 div-scrollable" style="width: 100%;">
+                    <div class="col-12 h-100 border rounded-1 div-scrollable p-2" style="width: 100%;">
                         <div class="container">
                             @if ($notifications->isNotEmpty())
                                 <ul class="notifications">
