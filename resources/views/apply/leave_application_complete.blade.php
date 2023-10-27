@@ -97,7 +97,7 @@
                 </div>
         </div><!-- row -->
         <!-- ホームに戻る -->
-        <div class="row d-grid gap-2 col-3 mx-auto">
+        <div class="row d-grid gap-2 col-3 mx-auto leave_btn_div">
             <a href="{{ route('home') }}" class="btn btn-lg btn-primary btn-block">ホームに戻る</a>
         </div><!-- row -->
     </div><!-- container -->
