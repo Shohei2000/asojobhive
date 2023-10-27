@@ -27,8 +27,8 @@ class CalendarController extends Controller
             $data[] = [
                 'title' => $application->content,
                 'description' => $description,
-                'start' => $application->date, // 開始日
-                'end' => $application->date, // 終了日
+                'start' => $application->start_date, // 開始日
+                'end' => $application->end_date, // 終了日
                 'color' => '#1e90ff', //色
             ];
         }

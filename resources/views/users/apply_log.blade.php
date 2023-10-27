@@ -52,7 +52,7 @@
                                                             詳細
                                                         </button>
                                                     </td>
-                                                    <td class="col-2">{{ $apply->start_date }} ~</td>
+                                                    <td class="col-2">{{ $apply->start_date }} <br>〜<br>{{ $apply->end_date }}</td>
                                                     <td class="col-2">{{ $apply->company_name }}</td>
                                                     <td class="col-2">{{ $apply->content }}</td>
                                                 </tr>
