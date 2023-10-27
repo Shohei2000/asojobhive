@@ -42,15 +42,21 @@
                         <p class="m-0 py-4 align-middle bg-light">【氏名】</p>
                     </div>
                     <div class="col-3 px-0">
-                        <input type=ztext" name="name" value="{{ $request->name }}" class="form-control m-0 py-4 align-middle" readonly>
+                        <input type="text" name="name" value="{{ $request->name }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                 </div>
                 <div class="row border-bottom">
                     <div class="col-3 px-0">
                         <p class="m-0 py-4 align-middle bg-light">【日付】</p>
                     </div>
-                    <div class="col-9 px-0">
-                        <input type="date" name="date" value="{{ $request->date }}" class="form-control m-0 py-4 align-middle" readonly>
+                    <div class="col-4 px-0">
+                        <input type="datetime-local" name="start_date" value="{{ $request->start_date }}" class="form-control m-0 py-4 align-middle" readonly>
+                    </div>
+                    <div class="col-1 px-0">
+                        <p class="m-0 py-4 align-middle bg-light">~</p>
+                    </div>
+                    <div class="col-4 px-0">
+                        <input type="datetime-local" name="end_date" value="{{ $request->end_date }}" class="form-control m-0 py-4 align-middle" readonly>
                     </div>
                 </div>
                 <div class="row border-bottom">

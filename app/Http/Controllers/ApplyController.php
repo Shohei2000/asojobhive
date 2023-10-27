@@ -34,7 +34,8 @@ class ApplyController extends Controller
             'department' => 'required|string|max:255',
             'student_id' => 'required|numeric',
             'name' => 'required|string|max:255',
-            'date' => 'required|date',
+            'start_date' => 'required',
+            'end_date' => 'required',
             'subject' => 'required|string|max:255',
             'teacher' => 'required|string|max:255',
             'company_name' => 'required|string|max:255',
@@ -63,7 +64,8 @@ class ApplyController extends Controller
         $apply->department = $request->input('department');
         $apply->student_id = $request->input('student_id');
         $apply->name = $request->input('name');
-        $apply->date = $request->input('date');
+        $apply->start_date = $request->input('start_date');
+        $apply->end_date = $request->input('end_date');
         $apply->subject = $request->input('subject');
         $apply->teacher = $request->input('teacher');
         $apply->company_name = $request->input('company_name');
