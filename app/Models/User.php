@@ -29,6 +29,7 @@ class User extends Authenticatable
         'remember_token',
         'birthday',
         'gender',
+        'class_id',
     ];
 
     /**
