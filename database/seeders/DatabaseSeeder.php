@@ -14,6 +14,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        \App\Models\User::factory()->create([
+            'email' => 'test@example.net',
+            'password' => bcrypt('password'),
+            'first_name' => '太郎',
+            'last_name' => 'テスト',
+            'first_name_furigana' => 'たろう',
+            'last_name_furigana' => 'てすと',
+            'birthday' => '2000-02-22',
+            'gender' => '男性', // または '女性'
+            'phone_number' => '090-1234-5678',
+            'address' => '福岡県福岡市博多区',
+            'created_at' => now(),
+            'updated_at' => now(),
+            'remember_token' => null,
+            'class_id' => '1',
+        ]);
+
         \App\Models\User::factory(5)->create();
         \App\Models\Company::factory()->count(10)->create();
         // \App\Models\CompanyQuestion::factory()->count(20)->create();
