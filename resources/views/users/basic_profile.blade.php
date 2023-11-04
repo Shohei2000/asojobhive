@@ -7,18 +7,24 @@
     <title>プロファイル</title>
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <!-- ビューファイル内の<head>セクション内に以下のスクリプトを追加 -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 </head>
 <body>
     <header>@include('header')</header>
 
     <div class="container container-home-summary2 mt-5" style="height:40%;">
+    @include('user_nav')
         <div class="row row-home-summary2 d-flex justify-content-center h-100">
             <div class="col-12 p-0 border rounded-1" style="width:80%;">
 
                 <div class="row w-100 mx-0 my-4 lh-3rem">
                     <div class="col-12 d-flex justify-content-between">
                         <h3 class="m-0 p-0 px-3 lh-3rem">基本情報</h3>
-                        <a class="nav-link px-3" href="{{ route('users.editBasicProfile') }}">
+                        <a class="nav-link px-3" href="{{ route('user.editBasicProfile') }}">
                             <i class="fa-sharp fa-solid fa-pen-to-square fa-2xl lh-1" alt="編集アイコン"></i>
                         </a>
                     </div>
@@ -37,6 +43,10 @@
                                         <tr>
                                         <td class="col-4 table-info">ふりがな</td>
                                         <td class="col-8">{{ Auth::user()->last_name_furigana }} {{ Auth::user()->first_name_furigana }}</td>
+                                        </tr>
+                                        <tr>
+                                        <td class="col-4 table-info">クラスID</td>
+                                        <td class="col-8">{{ Auth::user()->class_id }}</td>
                                         </tr>
                                         <tr>
                                         <td class="col-4 table-info">性別</td>

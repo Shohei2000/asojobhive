@@ -36,4 +36,17 @@ class Company extends Model
         'office_count',
         'website_url',
     ];
+
+    /**
+     * 企業に関連する質問を取得
+     */
+    public function questions()
+    {
+        return $this->hasMany(CompanyQuestion::class);
+    }
+
+    public function replies()
+    {
+        return $this->hasMany(CompanyQuestionReply::class, 'company_id');
+    }
 }

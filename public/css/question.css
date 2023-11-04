@@ -1,0 +1,133 @@
+/* question.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f8fa; /* Twitterの背景色に似せています */
+    margin: 0;
+    padding: 0;
+}
+
+/* ボックス1のスタイル */
+.box-1 {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.title-1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1da1f2;
+}
+
+.question-info {
+    margin-bottom: 15px;
+}
+
+.question-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #1da1f2;
+}
+
+.question-text {
+    font-size: 18px;
+    color: #333;
+}
+/* ボックス3のスタイル */
+.box-3 {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.title-3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #1da1f2;
+}
+
+/* 回答一覧のスタイル */
+.reply-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reply-item {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.no-reply-msg {
+    margin: 10px 0;
+    font-size: 18px;
+    color: #555;
+}
+/* ボックス2のスタイル */
+.form-box {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+
+.title-2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #1da1f2;
+}
+
+.box_con {
+    margin: 10px 0;
+}
+
+.input-1,
+.area-1,
+.form_btn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form_btn {
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form_btn:hover {
+    background-color: #0e71a1;
+}
+
+.p-3 {
+    margin: 10px 0;
+}
+/* バックボタンのスタイル */
+.btn-back {
+    background-color: #fff;
+    color: #1da1f2;
+    border: 1px solid #1da1f2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-back:hover {
+    background-color: #f5f8fa;
+}

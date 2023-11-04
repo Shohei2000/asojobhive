@@ -1,0 +1,92 @@
+/* questions.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f8fa; /* Twitterの背景色に似せています */
+    margin: 0;
+    padding: 0;
+}
+
+/* ボタンスタイル */
+.btn-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    background-color: #1da1f2;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0e71a1;
+}
+
+.btn-back {
+    background-color: #fff;
+    color: #1da1f2;
+    border: 1px solid #1da1f2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.btn-back:hover {
+    background-color: #f5f8fa;
+}
+
+/* テーブルスタイル */
+table {
+    width: 80%;
+    margin: auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #1da1f2;
+    color: #fff;
+
+}
+
+table tr:nth-child(even) {
+    background-color: #f5f8fa;
+}
+
+/* リンクスタイル */
+a {
+    color: #1da1f2;
+    text-decoration: none;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.a_link{
+    writing-mode: horizontal-tb;
+    white-space: nowrap;
+}

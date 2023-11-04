@@ -129,7 +129,7 @@ class AuthController extends Controller
         $user->remember_token = $request->input('remember_token');
         $user->birthday = $request->input('birthday');
         $user->gender = $request->input('gender');
-        $user->class_id =$request->input('class_id');
+        $user->class_id = $request->input('class_id');
 
         // ユーザーを保存
         $user->save();
@@ -139,5 +139,50 @@ class AuthController extends Controller
 
         return redirect()->route('login.show')->with('register_success', '新規登録が完了しました。');
 
+    }
+    public function editCheck(Request $request)
+{
+    $request->session()->put('registerData', $request->all());
+
+    // dd($request->last_name);
+
+    $validator = Validator::make($request->all(), [
+        'email' => 'required|email|unique:users,email,' . Auth::id(),
+        'password' => 'nullable|min:6',
+        'first_name' => 'required',
+        'first_name_furigana' => 'required',
+        'last_name' => 'required',
+        'last_name_furigana' => 'required',
+        'phone_number' => 'required',
+        'address' => 'required',
+        'birthday' => 'required|date',
+        'gender' => 'required|in:male,female',
+        'class_id' => 'required',
+    ]);
+
+    // Get the authenticated user
+    $user = Auth::user();
+
+    $user->email = $request->input('email');
+
+    // Update the password if provided
+    if ($request->filled('password')) {
+        $user->password = Hash::make($request->input('password'));
+    }
+
+    $user->first_name = $request->input('first_name');
+    $user->first_name_furigana = $request->input('first_name_furigana');
+    $user->last_name = $request->input('last_name');
+    $user->last_name_furigana = $request->input('last_name_furigana');
+    $user->phone_number = $request->input('phone_number');
+    $user->address = $request->input('address');
+    $user->birthday = $request->input('birthday');
+    $user->gender = $request->input('gender');
+    $user->class_id = $request->input('class_id');
+
+    // Save the updated user
+    $user->save();
+
+    return redirect()->route('user.showBasicProfile')->with('register_success', '登録が完了しました。');
     }
 }

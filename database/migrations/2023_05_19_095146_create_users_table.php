@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->date('birthday')->nullable();
             $table->string('gender')->nullable();
-            $table->interger('class_id');
+            $table->integer('class_id');
         });
     }
 

@@ -1,0 +1,91 @@
+/* question_form.css */
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f8fa; /* Twitterの背景色に似せています */
+    margin: 0;
+    padding: 0;
+}
+/* Container Styles */
+.box {
+    background-color: #fff;
+    border: 1px solid #e1e8ed;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+}
+/* Form Styles */
+.Form {
+    list-style: none;
+    padding: 0;
+}
+/* formタイトル */
+.Form-Item {
+    margin-bottom: 20px;
+}
+
+.Form-Item-Label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #1da1f2;
+}
+
+.Form-Item-Input,
+.Form-Item-Textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e1e8ed;
+    border-radius: 5px;
+}
+
+.Form-Item-Textarea {
+    height: 150px;
+}
+/* formボタン */
+.form_btn {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form_btn {
+    background-color: #1da1f2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form_btn:hover {
+    background-color: #0e71a1;
+}
+
+/* Back Button Styles */
+.btn-back {
+    background-color: #fff;
+    color: #1da1f2;
+    border: 1px solid #1da1f2;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #f5f8fa;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
