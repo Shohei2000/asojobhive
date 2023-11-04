@@ -59,10 +59,10 @@
                 <x-alert type="success" :session="session('register_success')"/>
 
             <label for="inputEmail" class="sr-only"></label>
-            <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email address" autofocus>
+            <input type="email" id="inputEmail" class="form-control" name="email" placeholder="test@example.net" value="test@example.net" autofocus>
 
             <label for="inputPassword" class="sr-only"></label>
-            <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password">
+            <input type="password" id="inputPassword" class="form-control" name="password" value="password" placeholder="password">
 
             <div class="checkbox my-3">
                 <label>
@@ -70,6 +70,7 @@
                 </label>
             </div>
 
+            <label class="test_data">↓テスト用ログインデータ↓<br>test@example.net<br>password</label>
             <button class="btn btn-lg btn-primary btn-block w-100" type="submit">ログイン</button>
 
             </form>

@@ -21,9 +21,9 @@ class UserFactory extends Factory
             // 'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'password' => bcrypt('password'), // パスワードを固定で設定
             'first_name' => $this->faker->firstName,
-            // 'first_name_furigana' => $faker->kanaName,
+            'first_name_furigana' => '',
             'last_name' => $this->faker->lastName,
-            // 'last_name_furigana' => $faker->kanaName,
+            'last_name_furigana' => '',
             'birthday' => $this->faker->dateTimeBetween('-30 years', '-19 years')->format('Y-m-d'),
             'gender' => $this->faker->randomElement(['男性', '女性']),
             'phone_number' => $this->faker->phoneNumber,
