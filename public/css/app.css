@@ -18567,3 +18567,240 @@ textarea.form-control-lg {
 .lh-3rem{
   line-height: 3rem;
 }
+
+/* CSSスタイルはこちらに記述 */
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 30px; /* 上下左右に余白を追加 */
+}
+
+h1 {
+  text-align: center;
+
+}
+
+/* テーブルのスタイル */
+table {
+  margin: 20px auto; /* テーブルを中央に配置 */
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: 70%; /* テーブルの幅を100%に設定 */
+}
+
+td {
+  padding: 5px; /* セルのパディングを狭める */
+  border: 1px solid #ccc; /* セルのボーダーを設定 */
+  font-size: 12px; /* フォントサイズを小さくする */
+  line-height: 1.2; /* 行の高さを調整 */
+}
+
+/* 左側のセルのスタイル */
+td.label {
+  padding: 10px 10px;
+  color: gray; /* 左のセルの項目の文字色を灰色に設定 */
+  font-weight: normal; /* フォントを細くする */
+  font-size: 12px;
+  white-space: nowrap;
+  background-color: #f7f5f5; /* 左のセルの背景色を灰色に設定 */
+  position: relative; /* 必須マークを配置するために位置を相対指定 */
+}
+
+/* 必須マークのスタイル */
+span.required-mark {
+  background-color: red;
+  color: white;
+  font-size: 9px; /* 必須マークのフォントサイズを小さくする */
+  padding: 1px 4px; /* 長方形の形にするためにパディングを指定 */
+  border-radius: 3px; /* 角を丸くする */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%); /* 必須マークをセルの中央に配置 */
+  right: 10px;
+}
+
+/* 入力フォームのスタイル */
+.form-control {
+  max-width: 100%; /* 入力フォームの最大幅を設定 */
+  width: 100%; /* 入力フォームの幅を100%に設定 */
+  padding: 5px; /* 入力フォームのパディングを設定 */
+  border: 1px solid #ccc; /* 入力フォームのボーダーを設定 */
+}
+
+/* ボタンのスタイル */
+.buttonBasic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  height: 64px;
+  padding: 8px 24px;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  overflow-wrap: anywhere;
+  background-color: #6fa24a;
+  border: none; /* ボーダーを設定 */
+  border-radius: 5px; /* 角を丸くする */
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* ボタンにホバー時のスタイルを追加 */
+.buttonBasic:hover {
+  background-color: #54802f; /* ホバー時の背景色 */
+}
+
+/* 登録ボタンのスタイル */
+.btn-primary {
+  display: block;
+  margin: 0 auto; /* ボタンを水平方向に中央に配置 */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #42d3fb; 
+  color: #fff; /* 白色の文字色 */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+.btn-back {
+  /* 他のボタンスタイル... */
+  margin-top: 10px; /* ボタン上部に余白を追加 */
+}
+.btn-primary1{
+  display: block;
+  margin: 0 auto; /* ボタンを水平方向に中央に配置 */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #42d3fb; 
+  color: #000; /* 白色の文字色 */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+
+/* ボタンにホバー時のスタイルを追加 */
+.btn-primary:hover {
+  background-color: #3aa9d3; /* ホバー時の水色 */
+}
+
+/* ボタンを右に寄せるスタイル */
+.buttons {
+  text-align: center; /* ボタンを水平方向に中央に配置 */
+  margin-top: 40px; /* ボタンの上部に余白を追加（必要に応じて調整） */
+}
+
+/* ボタンを右にずらすためのスタイル */
+.buttons button {
+  text-align: center;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.example-text {
+  color: #42d3fb; /* 例の文字の文字色を水色に設定 */
+  font-size: 12px;
+  margin-left: 5px; /* 例の文字とフォームの間の余白を追加 */
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* フォームに影を追加 */
+}
+
+/* メールアドレス入力フォームの文字色を灰色に設定 */
+.email-text {
+  color: gray; /* メールアドレスの文字色を灰色に設定 */
+}
+
+/* パスワード入力フォームの文字色を灰色に設定 */
+.password-text {
+  color: gray; /* パスワードの文字色を灰色に設定 */
+}
+
+/* その他の入力フォームの文字色も同様に設定 */
+.name-text {
+  color: gray; /* 名前の文字色を灰色に設定 */
+}
+
+.phone-number-text {
+  color: gray; /* 電話番号の文字色を灰色に設定 */
+}
+
+.example-text {
+  margin-left: 80px; 
+  font-size: 12px; 
+}
+body {
+    height: 1500px; /* 例: ページの高さを2000pxに設定 */
+}
+
+/* style.css */
+
+.my-table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  width: 50%;
+}
+
+.my-table td {
+
+  border: 1px solid #ccc;
+  font-size: 12px;
+  padding-left: 40px;
+  line-height: 2.3; /* セルの高さを調整 */
+}
+
+.my-table td.label {
+  padding: 8px 10px; /* セルのパディングを調整 */
+  color: black; /* 左のセルの文字色を黒に設定 */  
+  font-weight: 300;
+  font-size: 15px;
+  background-color: #b6effb;
+  width: 40%;
+}
+
+.my-table .btn-primary {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #42d3fb;
+  color: #fff;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.my-table .btn-primary:hover {
+  background-color: #3aa9d3;
+}
+
+.form-control-1 {
+  width: 50%; /* フォームの幅を100%に設定 */
+  padding: 10px; /* パディングを増やして見栄えを向上させる */
+  border: 1px solid #ccc; /* 枠線の色を黒に変更 */
+  border-radius: 5px; /* 枠線の角を丸める */
+  background-color: white; /* フォームの背景色を白に設定 */
+  font-size: 12px; /* フォントサイズを調整 */
+  height: 30px; /* フォームの高さを狭く調整 */
+}
