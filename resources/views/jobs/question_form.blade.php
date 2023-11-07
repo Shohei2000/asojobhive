@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!-- 質問投稿画面 -->
 <!DOCTYPE html>
 <html lang="ja">
@@ -8,6 +11,7 @@
         <title>質問投稿</title>
         <!-- JavaScript -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/notification.js') }}"></script>
         <!-- CSS -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/question_form.css') }}">

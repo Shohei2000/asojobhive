@@ -7,8 +7,6 @@ use App\Models\CompanyQuestionReply;
 use App\Models\CompanyQuestion;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-
 class QuestionController extends Controller
 {
     /**

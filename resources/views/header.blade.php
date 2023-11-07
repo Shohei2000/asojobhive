@@ -41,10 +41,29 @@
         <button class="btn btn-danger btn-gradient">ログアウト</button>
       </form>
 
-      <a class="nav-link px-3" href="#">
-        <i class="far fa-bell fa-2x" style="color:#ffffff;"></i>
+      <a class="nav-link px-3" href="#" data-bs-toggle="modal" data-bs-target="#notificationModal">
+        <i class="far fa-bell fa-2x" style="color: #ffffff;"></i>
       </a>
-      
     </div>
   </div>
+    <!-- モーダルの開始 -->
+    <div class="modal fade" id="notificationModal" tabindex="-1" aria-labelledby="notificationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="notificationModalLabel">通知</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 通知の内容をここに表示 -->
+                    <p id="notificationMessage"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">閉じる</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- モーダルの終了 -->
+
 </nav>

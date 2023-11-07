@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <!-- question.blade.php -->
 <!--　質問詳細画面 -->
 <!DOCTYPE html>
@@ -9,6 +12,7 @@
         <title>質問詳細</title>
         <!-- JavaScript -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/notification.js') }}"></script>
         <!-- CSS -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
         <link rel="stylesheet" href="{{ asset('css/question.css') }}">
