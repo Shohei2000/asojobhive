@@ -120,7 +120,7 @@
                 </tr>
                 <tr>
                     <td class="label required-label"><span class="required-mark">必須</span><label for="address">住所</label></td>
-                    <td><textarea name="address" class="form-control-1" id="address" rows="4" required>{{ old('address', session('registerData.address')) }}</textarea></td>
+                    <td><textarea name="address" class="form-control-1" id="address" rows="4" required style="padding-bottom: 0;padding-top:0;">{{ old('address', session('registerData.address')) }}</textarea></td>
                 </tr>
                 <tr>
                     <td class="label required-label"><span class="required-mark">必須</span><label for="birthday">生年月日</label></td>
@@ -129,16 +129,47 @@
                 <tr>
                     <td class="label required-label"><span class="required-mark">必須</span><label for="gender">性別</label></td>
                     <td>
-                        <select name="gender" class="form-control-1" id="gender" required>
+                        <select name="gender" class="form-control-1" id="gender" required style="padding-bottom: 0;padding-top:0;">
                             <option value="male">男性</option>
                             <option value="female">女性</option>
                         </select>
                     </td>
                 </tr>
-                <td class="label required-label"><span class="required-mark">必須</span><label for="class_id">クラスID</label></td>
+                <td class="label required-label"><span class="required-mark">必須</span><label for="class_id">クラス</label></td>
         <td>
             <div class="input-container">
-                <input type="text" name="class_id" class="form-control-1" id="class_id" value="{{ old('class_id', session('registerData.class_id')) }}" required>
+                <select class="form-select form-control-1" name="class_id" id="class_id" value="{{ old('class_id', session('registerData.class_id')) }}" required style="padding-bottom: 0;padding-top:0;">
+                    <option value="1">SD4</option>
+                    <option value="2">NS4</option>
+                    <option value="3">ES4</option>
+                    <option value="4">SD3A</option>
+                    <option value="5">SD3B</option>
+                    <option value="6">SD3C</option>
+                    <option value="7">SD3D</option>
+                    <option value="8">SD3E</option>
+                    <option value="9">NS3A</option>
+                    <option value="10">NS3B</option>
+                    <option value="11">AI3</option>
+                    <option value="12">SD2A</option>
+                    <option value="13">SD2B</option>
+                    <option value="14">SD2C</option>
+                    <option value="15">SD2D</option>
+                    <option value="16">SD2E</option>
+                    <option value="17">SD2F</option>
+                    <option value="18">SD2G</option>
+                    <option value="19">NS2A</option>
+                    <option value="20">NS2B</option>
+                    <option value="21">AI2</option>
+                    <option value="22">IT1A</option>
+                    <option value="23">IT1B</option>
+                    <option value="24">IT1C</option>
+                    <option value="25">IT1D</option>
+                    <option value="26">IT1E</option>
+                    <option value="27">IT1F</option>
+                    <option value="28">IT1G</option>
+                    <option value="29">IT1H</option>
+                </select>
+
                 <div class="example-container">
                     <span class="example-text">例 )</span>
                     <span class="class-id-text">1</span>
