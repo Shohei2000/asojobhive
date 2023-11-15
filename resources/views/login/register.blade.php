@@ -135,7 +135,7 @@
                         </select>
                     </td>
                 </tr>
-                <td class="label required-label"><span class="required-mark">必須</span><label for="class_id">クラスID</label></td>
+                <td class="label required-label"><span class="required-mark">必須</span><label for="class_id">クラス</label></td>
         <td>
             <div class="input-container">
                 <select class="form-select form-control-1" name="class_id" id="class_id" value="{{ old('class_id', session('registerData.class_id')) }}" required style="padding-bottom: 0;padding-top:0;">
