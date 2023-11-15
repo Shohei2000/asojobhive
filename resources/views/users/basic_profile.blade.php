@@ -46,7 +46,7 @@
                                         </tr>
                                         <tr>
                                         <td class="col-4 table-info">クラスID</td>
-                                        <td class="col-8">{{ Auth::user()->class_id }}</td>
+                                        <td class="col-8">{{ $class_name }}</td>
                                         </tr>
                                         <tr>
                                         <td class="col-4 table-info">性別</td>
