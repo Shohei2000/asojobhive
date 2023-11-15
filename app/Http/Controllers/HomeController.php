@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Bookmark;
 use App\Models\Applications;
-use App\Models\Notification;
+use App\Models\Notifications;
 
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -20,7 +20,7 @@ class HomeController extends Controller
     public function index()
     {
         #通知一覧表示
-        $notifications = Notification::orderBy('created_at', 'desc')->get();
+        $notifications = Notifications::orderBy('created_at', 'desc')->get();
 
         $bookmark_count = Bookmark::where('user_id', Auth::user()->id)->count();
 

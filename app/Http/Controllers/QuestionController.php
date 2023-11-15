@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Company;
 use App\Models\CompanyQuestionReply;
 use App\Models\CompanyQuestion;
+use App\Models\Notification;
 
 use Illuminate\Http\Request;
 class QuestionController extends Controller
@@ -60,6 +61,11 @@ class QuestionController extends Controller
         $reply->reply_content = $request->reply_content;
         $reply->save();
 
+        //正常にデータが挿入されたら、通知を作成
+        $notification = new Notification();
+        $notification->title = '質問に回答がありました。';
+        $notification->save();
+
         return redirect()->back()->with('success', '返信が投稿されました。');
     }
 
@@ -85,6 +91,11 @@ class QuestionController extends Controller
         } catch (\Exception $e) {
             dd($e->getMessage());
         }
+
+        //正常にデータが挿入されたら、通知を作成
+        $notification = new Notification();
+        $notification->title = '質問が投稿されました。';
+        $notification->save();
 
         return redirect()->route('company.questions', ['companyId' => $company->id])->with('success', '質問が投稿されました。');
     }

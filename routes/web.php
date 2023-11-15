@@ -17,6 +17,8 @@ use App\Http\Controllers\CalendarController;//カレンダー用
 
 use App\Http\Controllers\ApplicationController;//選考ステータス用
 
+use App\Http\Controllers\NotificationController;//通知用
+
 
 /*
 |--------------------------------------------------------------------------
@@ -47,6 +49,10 @@ Route::get('/teacher', 'TeacherController@login')->name('teacher.login');
 Route::middleware(['auth'])->group(function () {
     //ホーム画面(ダッシュボード)
     Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+    //通知モーダル用
+    Route::get('/fetch-notifications', [NotificationController::class, 'fetchNotifications'])->name('notifications.fetch');
+
 
     //ログアウト機能
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');

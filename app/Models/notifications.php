@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class notification extends Model
+class notifications extends Model
 {
     use HasFactory;
 
-    protected $table = 'notification';
+    protected $table = 'notifications';
 
     protected $fillable = [
-        'title',//通知用タイトル
+        'message',//通知用メッセージ
     ];
 }
