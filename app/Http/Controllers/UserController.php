@@ -64,7 +64,7 @@ class UserController extends Controller
     public function showApplyLog(Leave_application $apply)
     {
         // 公欠申請履歴画面を表示.
-        
+
         $name = (Auth::user()->last_name ." ". Auth::user()->first_name);
         $leave_applications = Leave_application::where('name', $name)->get();
         $active = "ApplyLog";

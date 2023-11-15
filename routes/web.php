@@ -17,6 +17,8 @@ use App\Http\Controllers\CalendarController;//カレンダー用
 
 use App\Http\Controllers\ApplicationController;//選考ステータス用
 
+use App\Http\Controllers\NotificationController;//通知用
+
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +50,10 @@ Route::middleware(['auth'])->group(function () {
     //ホーム画面(ダッシュボード)
     Route::get('/home', [HomeController::class, 'index'])->name('home');
 
+    //通知モーダル用
+    Route::get('/fetch-notifications', [NotificationController::class, 'fetchNotifications'])->name('notifications.fetch');
+
+
     //ログアウト機能
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 
@@ -63,7 +69,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/apply_log/delete',[UserController::class,'deleteApplyLog'])->name('user.deleteApplyLog');
     //登録情報更新処理
     Route::post('/edit', [AuthController::class, 'editCheck'])->name('edit.check');
-  
+
     //企業一覧画面
     Route::get('/companies', [CompanyController::class, 'showCompanies'])->name('companies.show');
     //企業詳細画面
@@ -88,7 +94,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/bookmark_store', [BookmarkController::class, 'store'])->name('bookmark.store');
     //ブックマック削除機能
     Route::post('/bookmark_restore', [BookmarkController::class, 'restore'])->name('bookmark.restore');
-    
+
     //気になるリスト画面
     Route::get('/bookmarks', [BookmarkController::class, 'showBookmarks'])->name('user.showBookmarks');
     //応募済みリスト画面

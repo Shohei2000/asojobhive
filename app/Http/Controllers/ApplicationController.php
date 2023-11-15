@@ -7,10 +7,11 @@ use App\Models\Applications;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session; // セッションを使用するためにインポート
+use Illuminate\Database\QueryException; // クエリ実行時の例外を使用するためにインポート
 
 class ApplicationController extends Controller
 {
-    
+
     public function showEntries()
     {
         /**
@@ -79,7 +80,7 @@ class ApplicationController extends Controller
             // エラーメッセージを表示し、前のページに戻る
             return back();
         }
-  
+
     }
 
     public function updateStatus(Request $request) {
