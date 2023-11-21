@@ -12,6 +12,9 @@ class notification extends Model
     protected $table = 'notification';
 
     protected $fillable = [
-        'title',//通知用タイトル
+        'title',//通知用タイトル// Notification.php
+        'url',//通知用URL// Notification.php
+        'created_at',
+        'updated_at'
     ];
 }

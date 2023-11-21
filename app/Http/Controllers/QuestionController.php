@@ -61,9 +61,18 @@ class QuestionController extends Controller
         $reply->reply_content = $request->reply_content;
         $reply->save();
 
-        //正常にデータが挿入されたら、通知を作成
-        $notification = new Notification();
-        $notification->title = '質問に回答がありました。';
+        // 質問オブジェクトを取得
+        $question = CompanyQuestion::findOrFail($request->question_id);
+
+         // 質問への URL を生成
+        $questionUrl = $this->generateQuestionUrl($question->company_id, $question->id);
+
+
+        // URL を通知に直接追加し、データベースに保存
+        $notification = new Notification([
+            'title' => '質問に回答がありました。',
+            'url' => $questionUrl,
+        ]);
         $notification->save();
 
         return redirect()->back()->with('success', '返信が投稿されました。');
@@ -94,7 +103,7 @@ class QuestionController extends Controller
 
         //正常にデータが挿入されたら、通知を作成
         $notification = new Notification();
-        $notification->title = '質問が投稿されました。';
+        $notification->title = $company->company_name .'に質問が投稿されました。';
         $notification->save();
 
         return redirect()->route('company.questions', ['companyId' => $company->id])->with('success', '質問が投稿されました。');
@@ -114,5 +123,12 @@ class QuestionController extends Controller
         $replies = CompanyQuestionReply::where('company_question_id', $questionId)->get();
 
         return view('jobs.question', compact('company', 'question', 'replies'));
+    }
+    /**
+     * これはURLを作成するやつ
+     */
+    protected function generateQuestionUrl($companyId, $questionId)
+    {
+        return url("/companies/{$companyId}/questions/{$questionId}");
     }
 }

@@ -32,3 +32,34 @@ li.notification {
     color: #777;
 }
 
+/* モーダル部分のデザイン（通知用）*/
+#notificationList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.notification-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.notification-item h5 {
+    margin-bottom: 5px;
+}
+
+/* 通知のスタイル */
+.notification-item {
+    margin-bottom: 10px;
+}
+
+/* リンクのスタイル */
+.notification-item a {
+    color: dodgerblue;
+    text-decoration: underline;
+}
+
+/* 他のスタイルやアニメーションを追加できます */
+
+

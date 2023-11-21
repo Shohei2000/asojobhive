@@ -60,8 +60,8 @@
 </nav>
 
 <script>
-    // モーダルが表示された時の処理
-    $('#notificationModal').on('show.bs.modal', function () {
+// モーダルが表示された時の処理
+$('#notificationModal').on('show.bs.modal', function () {
     $.ajax({
         url: "{{ route('notifications.fetch') }}",
         method: 'GET',
@@ -70,8 +70,22 @@
             notificationList.empty(); // 通知リストをクリア
 
             if (data.title) {
-                notificationList.append('<li>' + data.title + '</li>'); // 最新の通知を表示
-                notificationList.append('<li>Created At: ' + data.created_at + '</li>'); // Created Atを表示
+                // created_atをDateオブジェクトに変換
+                var createdAtDate = new Date(data.created_at);
+                // 表示用のフォーマットに変換
+                var formattedCreatedAt = createdAtDate.toLocaleString();
+
+                var notificationItem = $('<div class="notification-item">');
+                notificationItem.append('<h5>' + data.title + '</h5>');
+                notificationItem.append('<p>作成日: ' + formattedCreatedAt + '</p>');
+
+                // data.urlが存在する場合、リンクを生成
+                if (data.url) {
+                    var link = $('<a>').attr('href', data.url).text('詳細を見る');
+                    notificationItem.append(link);
+                }
+
+                notificationList.append(notificationItem);
             } else {
                 notificationList.append('<p>通知はありません。</p>');
             }
