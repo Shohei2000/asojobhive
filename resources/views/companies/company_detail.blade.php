@@ -81,6 +81,11 @@
         <div class="col-12 w-100">
             <h2 class="p-3 text-center">【 募 集 求 人 】</h2>
             <div class="row justify-content-center">
+                @if($jobs->isEmpty())
+                    <div class="alert alert-primary text-center w-100 mx-0 my-2">
+                        現在募集求人はありません
+                    </div>
+                @endif
                 @foreach($jobs as $job)
                     @if(($loop->index + 2) % 3 == 0)
                         <div class="job_card rounded-3 job_card_middle" onclick="location.href='/companies/{{ $company->id }}/{{ $job->id }}'">

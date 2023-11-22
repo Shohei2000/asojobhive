@@ -13,6 +13,11 @@
         </div>
     </div>
     <div class="row">
+        @if($companies->isEmpty())
+            <div class="alert alert-primary text-center w-100 mx-0 my-2">
+                検索にヒットした企業はありません
+            </div>
+        @endif
         @foreach ($companies as $company)
             <div class="col-6 mb-3">
                 <div class="row h-100 justify-content-center">

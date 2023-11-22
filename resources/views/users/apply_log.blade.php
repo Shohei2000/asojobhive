@@ -44,28 +44,26 @@
                                                     公欠申請履歴はありません
                                                 </div>
                                             </tr>
-                                        @endif
-                                        @if($leave_applications->isNotEmpty())
-                                        <tr>
-                                            <td class="col-1 table-info"></td>
-                                            <td class="col-2 table-info">日付</td>
-                                            <td class="col-2 table-info">会社名</td>
-                                            <td class="col-2 table-info">内容</td>
-                                        </tr>
+                                        @endif                                        
                                         @foreach ($leave_applications as $apply)
-                                        <tr>
-                                            <td class="col-2 ">
-                                                <button type="submit" class="btn btn-primary btn-sm w-100" 
-                                                onclick="location.href='/apply_log/{{ $apply->id }}/detail'">
-                                                    詳細
-                                                </button>
-                                            </td>
-                                            <td class="col-2">{{ $apply->start_date }} <br>〜<br>{{ $apply->end_date }}</td>
-                                            <td class="col-2">{{ $apply->company_name }}</td>
-                                            <td class="col-2">{{ $apply->content }}</td>
-                                        </tr>
+                                            <tr>
+                                                <td class="col-1 table-info"></td>
+                                                <td class="col-2 table-info">日付</td>
+                                                <td class="col-2 table-info">会社名</td>
+                                                <td class="col-2 table-info">内容</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="col-2 ">
+                                                    <button type="submit" class="btn btn-primary btn-sm w-100" 
+                                                    onclick="location.href='/apply_log/{{ $apply->id }}/detail'">
+                                                        詳細
+                                                    </button>
+                                                </td>
+                                                <td class="col-2">{{ $apply->start_date }} <br>〜<br>{{ $apply->end_date }}</td>
+                                                <td class="col-2">{{ $apply->company_name }}</td>
+                                                <td class="col-2">{{ $apply->content }}</td>
+                                            </tr>
                                         @endforeach
-                                        @endif
                                     </tbody>
                                 </table>
                             </div>
