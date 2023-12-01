@@ -13,7 +13,7 @@ class CreateClassTable extends Migration
      */
     public function up()
     {
-        Schema::create('class', function (Blueprint $table) {
+        Schema::create('classe', function (Blueprint $table) {
             $table->increments('class_id');
             $table->string('class_name');
             $table->integer('grade');
