@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Status; // 必要に応じて、正しいネームスペースを使用して Status モデルをインポート
+use App\Models\Classes; // 必要に応じて、正しいネームスペースを使用して Classes モデルをインポート
 
 class DatabaseSeeder extends Seeder
 {
@@ -51,6 +52,20 @@ class DatabaseSeeder extends Seeder
             Status::factory()->create([
                 'id' => $id, // id カラムを設定
                 'status_name' => $statusName,
+            ]);
+        }
+
+        $classes = [
+            1 => '情報工学科',
+            2 => 'ポップカルチャー',
+            3 => '人工知能科',
+        ];
+
+        foreach ($classes as $id => $className) {
+            Classes::factory()->create([
+                'class_id' => $id, // id カラムを設定
+                'class_name' => $className,
+                'grade' => '4',
             ]);
         }
     }
