@@ -5,11 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class notifications extends Model
+class Notifications extends Model
 {
     use HasFactory;
-
-    // 名前の変更notifications→Notifications
 
     protected $table = 'notifications';
 
