@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Company;
 use App\Models\Leave_application;
-use App\Models\Classe;
+use App\Models\Classes;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -19,7 +19,7 @@ class UserController extends Controller
          * @return \Illuminate\Contracts\Support\Renderable
          */
         //class_idからclass_nameを取得
-        $class_name = Classe::where('class_id', Auth::user()->class_id)->first()->class_name;
+        $class_name = Classes::where('class_id', Auth::user()->class_id)->first()->class_name;
         $active = "UserDetail";
         return view('users.basic_profile',compact('active','class_name'));
     }
