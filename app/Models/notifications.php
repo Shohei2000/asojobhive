@@ -9,6 +9,8 @@ class notifications extends Model
 {
     use HasFactory;
 
+    // 名前の変更notifications→Notifications
+
     protected $table = 'notifications';
 
     protected $fillable = [
