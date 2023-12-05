@@ -43,12 +43,12 @@
                 @include('calendar')
             </div>
             <div class="col-6 d-flex flex-column align-items-start">
-                <div class="row w-100" style="height:10%;">
+                <div class="row w-100 align-items-center" style="height:4rem;">
                     <div class="col-12 w-100">
-                        <h1>通知一覧</h1>
+                        <h1 class="m-0">通知一覧</h1>
                     </div>
                 </div>
-                <div class="row w-100" style="height:90%;">
+                <div class="row w-100" style="height:50vh;">
                     <div class="col-12 w-100 border rounded-1 div-scrollable p-2">
                         <div class="container">
                             @if ($notifications->isNotEmpty())
