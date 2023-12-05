@@ -15,7 +15,7 @@
 <body>
     <header>@include('header')</header>
 
-    <div class="container container-home-summary2 mt-5" style="height:40%;">
+    <div class="container container-home-summary2">
         <div class="row row-home-summary2 d-flex justify-content-center h-100">
             <div class="col-12 p-0 border rounded-1" style="width:80%;">
 

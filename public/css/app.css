@@ -18581,7 +18581,6 @@ textarea.form-control-lg {
 
 /* テーブルのスタイル */
 table {
-  margin: 20px auto; /* テーブルを中央に配置 */
   border-collapse: collapse;
   border: 1px solid #ccc;
   width: 70%; /* テーブルの幅を100%に設定 */
@@ -18745,9 +18744,6 @@ span.required-mark {
   margin-left: 80px; 
   font-size: 12px; 
 }
-body {
-    height: 1500px; /* 例: ページの高さを2000pxに設定 */
-}
 
 /* style.css */
 
@@ -18854,4 +18850,21 @@ table tr td:first-child {
 .leave_btn {
 
   margin: 2rem 0 3rem 0;
+}
+
+/* ナビゲーションバーのCSS(jobナビゲーション,userナビゲーション) */
+.m-tab-navigation{
+  border-bottom: solid gray;
+  margin: 1rem 0 2rem 0;
+}
+
+.m-tab-navigation-col{
+  line-height: 3rem;
+}
+
+.m-tab-navigation-active{
+  border-bottom: solid dodgerblue 0.2rem;
+}
+.bookmark-right{
+  text-align: -webkit-right;
 }

@@ -77,7 +77,7 @@
         
     </div><!-- row -->
     
-    <div class="row text-start" id="job-anchor">
+    <div class="row text-start pb-4" id="job-anchor">
         <div class="col-12 w-100">
             <h2 class="p-3 text-center">【 募 集 求 人 】</h2>
             <div class="row justify-content-center">

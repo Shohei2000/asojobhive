@@ -14,3 +14,5 @@ yarn-error.log
 /.idea
 /.vscode
 storage/debugbar
+# 末尾が .icloud になっているファイルを無視
+*.icloud

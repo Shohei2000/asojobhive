@@ -37,15 +37,19 @@
     <!-- ホーム画面の上部5つのアイテム -->
     @include('home_summary')
 
-    <div class="container container-home-summary2 mt-5" style="height:40%;">
+    <div class="container container-home-summary2 mt-5">
         <div class="row row-home-summary2 d-flex justify-content-center h-100">
             <div class="col-lg-6 col-md-12" id="calendar">
                 @include('calendar')
             </div>
-            <div class="col-6 h-100 d-flex flex-column align-items-start justify-content-between">
-                <div class="row w-100 d-flex justify-content-start order-1" style="height:100%;">
-                    <h1>通知一覧</h1>
-                    <div class="col-12 h-100 border rounded-1 div-scrollable p-2" style="width: 100%;">
+            <div class="col-6 d-flex flex-column align-items-start">
+                <div class="row w-100" style="height:10%;">
+                    <div class="col-12 w-100">
+                        <h1>通知一覧</h1>
+                    </div>
+                </div>
+                <div class="row w-100" style="height:90%;">
+                    <div class="col-12 w-100 border rounded-1 div-scrollable p-2">
                         <div class="container">
                             @if ($notifications->isNotEmpty())
                                 <ul class="notifications">

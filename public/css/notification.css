@@ -2,7 +2,6 @@
 
 /* 通知一覧の親要素 */
 .div-scrollable {
-    max-height: 300px; /* スクロール可能な最大高さ */
     overflow-y: auto; /* 縦スクロールを有効にする */
 }
 

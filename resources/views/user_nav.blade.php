@@ -15,20 +15,3 @@
         </a>
     </div>
 </div>
-
-<style>
-.m-tab-navigation{
-    border-bottom: solid gray;
-}
-
-.m-tab-navigation-col{
-    line-height: 3rem;
-}
-
-.m-tab-navigation-active{
-    border-bottom: solid dodgerblue 0.2rem;
-}
-.bookmark-right{
-    text-align: -webkit-right;
-}
-</style>
