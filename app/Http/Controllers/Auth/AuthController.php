@@ -29,20 +29,33 @@ class AuthController extends Controller
      */
     public function login(LoginFormRequest $request)
     {
-        $credentials = $request->only('email','password');
+        $credentials = $request->only('email', 'password');
         $remember = $request->has('remember');
-        
+    
         if (Auth::attempt($credentials, $remember)) {
             $request->session()->regenerate();
-
+    
             return redirect()->route('home')->with('login_success', 'ログイン成功しました。');
         }
-
-        return back()->withErrors([
-            'login_error' => 'メールアドレスかパスワードが間違っています。',
-        ]);
-
+    
+        $errors = [];
+    
+        // メールアドレスが間違っている場合のエラーメッセージ
+        if (!User::where('email', $credentials['email'])->exists()) {
+            $errors['email'] = 'メールアドレスが間違っています。';
+        }
+    
+        // パスワードが間違っている場合のエラーメッセージ
+        if (User::where('email', $credentials['email'])->exists() && !Auth::attempt($credentials)) {
+            $errors['password'] = 'パスワードが間違っています。';
+            $errors['message'] = 'メンテナンス中';
+            // $errors['input_password'] = $credentials['password'];
+            // $errors['correct_password'] = User::where('email', $credentials['email'])->first()->password;
+        }
+    
+        return back()->withErrors($errors)->withInput($request->only('email', 'remember'));
     }
+    
 
     /**
      * ユーザーをアプリケーションからログアウトさせる

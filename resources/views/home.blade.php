@@ -18,8 +18,6 @@
     <link href="{{ asset('css/calendar.css') }}" rel="stylesheet">
     <link href="{{ asset('css/notification.css') }}" rel="stylesheet">
     <link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
-    <link href='fullcalendar/main.css' rel='stylesheet' />
-    <script src='fullcalendar/main.js'></script>
 
     <!-- Script -->
     <script src="{{ asset('js/app.js') }}"></script>
