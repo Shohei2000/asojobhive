@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class leave_application extends Model
+class LeaveApplication extends Model
 {
     use HasFactory;
 
@@ -22,5 +22,4 @@ class leave_application extends Model
         'contents',
         'date',
     ];
-
 }

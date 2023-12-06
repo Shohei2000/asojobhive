@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Leave_Application;
+use App\Models\LeaveApplication;
 
 use Illuminate\Http\Request;
 
@@ -12,7 +12,7 @@ class CalendarController extends Controller
     //公欠テーブル(leave_application)からデータを取得
     public function getEvents()
     {
-        $query = Leave_Application::query(); // すべてのレコードを取得
+        $query = LeaveApplication::query(); // すべてのレコードを取得
 
         $leaveApplications = $query->get();
 
