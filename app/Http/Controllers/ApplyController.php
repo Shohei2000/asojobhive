@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Leave_application;
+use App\Models\LeaveApplication;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -60,7 +60,7 @@ class ApplyController extends Controller
          * @return \Illuminate\Contracts\Support\Renderable
          */
         //公欠申請データを保存
-        $apply = new Leave_application();
+        $apply = new LeaveApplication();
         $apply->department = $request->input('department');
         $apply->student_id = $request->input('student_id');
         $apply->name = $request->input('name');

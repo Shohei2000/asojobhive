@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Company;
-use App\Models\Leave_application;
+use App\Models\LeaveApplication;
 use App\Models\Classes;
 
 use Illuminate\Support\Facades\Auth;
@@ -64,22 +64,22 @@ class UserController extends Controller
         return view('users.offers');
     }
 
-    public function showApplyLog(Leave_application $apply)
+    public function showApplyLog(LeaveApplication $apply)
     {
         // 公欠申請履歴画面を表示.
 
         $name = (Auth::user()->last_name ." ". Auth::user()->first_name);
-        $leave_applications = Leave_application::where('name', $name)->get();
+        $leave_applications = LeaveApplication::where('name', $name)->get();
         $active = "ApplyLog";
 
         return view('users.apply_log',compact('active','leave_applications'));
     }
 
-    public function showApplyLogDetail(Leave_application $apply)
+    public function showApplyLogDetail(LeaveApplication $apply)
     {
 
         // 公欠申請履歴詳細画面を表示.
-        $leave_application = Leave_application::where('id', $apply->id)->first();
+        $leave_application = LeaveApplication::where('id', $apply->id)->first();
 
         $active = "ApplyLog";
 
@@ -89,7 +89,7 @@ class UserController extends Controller
     public function deleteApplyLog(Request $request)
     {
         // 公欠申請履歴削除処理
-        $leave_application = Leave_application::where('id', $request->id)->first();
+        $leave_application = LeaveApplication::where('id', $request->id)->first();
         $leave_application->delete();
 
         //削除されましたアラートを表示
