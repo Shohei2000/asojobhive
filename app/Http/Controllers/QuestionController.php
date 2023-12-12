@@ -129,6 +129,6 @@ class QuestionController extends Controller
      */
     protected function generateQuestionUrl($companyId, $questionId)
     {
-        return url("/companies/{$companyId}/questions/{$questionId}");
+        return secure_url("/companies/{$companyId}/questions/{$questionId}");
     }
 }
