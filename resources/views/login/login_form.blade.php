@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ログインフォーム</title>
     <!-- JavaScript -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ secure_asset('js/app.js') }}" defer></script>
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/signin.css') }}">
+<link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/signin.css') }}">
     <!-- ビューファイル内の<head>セクション内に以下のスクリプトを追加 -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -24,7 +24,7 @@
             <form method="POST" action="{{ route('login') }}">
             @csrf
                 <div class="mb-3">
-                    <img src="{{ asset('images/asojobhive_logo.png') }}" alt="AsoJobHive Logo" class="w-100">
+                    <img src="{{ secure_asset('images/asojobhive_logo.png') }}" alt="AsoJobHive Logo" class="w-100">
                 </div>
             <!-- <h1 class="h3 mb-3 font-weight-normal">ログインフォーム</h1> -->
 

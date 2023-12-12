@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>気になるリスト</title>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/app.css') }}">
     <!-- ビューファイル内の<head>セクション内に以下のスクリプトを追加 -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -29,7 +29,7 @@
                         <div class="col-12 company_card">
                             <div class="row" style="height:55%;">
                                 <div class="col-6">
-                                    <img src="{{ asset('images/asojobhive_logo.png') }}" alt="asojobhive_logo" class="d-inline-block align-text-top w-100" style="height:20vh;">
+                                    <img src="{{ secure_asset('images/asojobhive_logo.png') }}" alt="asojobhive_logo" class="d-inline-block align-text-top w-100" style="height:20vh;">
                                 </div>
                                 <div class="col-6">
                                     <p>{{ $bookmark->company_name }}</p>

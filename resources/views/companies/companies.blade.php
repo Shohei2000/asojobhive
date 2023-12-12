@@ -24,7 +24,7 @@
                     <div class="col-12 company_card">
                         <div class="row" style="height:55%;">
                             <div class="col-6">
-                                <img src="{{ asset('images/asojobhive_logo.png') }}" alt="asojobhive_logo" class="d-inline-block align-text-top w-100" style="height:20vh;">
+                                <img src="{{ secure_asset('images/asojobhive_logo.png') }}" alt="asojobhive_logo" class="d-inline-block align-text-top w-100" style="height:20vh;">
                             </div>
                             <div class="col-6">
                                 <p style="font-size: 20px; font-weight: bold;">

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-gradient rounded-bottom" style="background-color: dodgerblue;">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('home') }}" style="width:8rem;">
-            <img src="{{ asset('images/asojobhive_logo.png') }}" alt="asojobhive_logo" class="d-inline-block align-text-top w-100">
+            <img src="{{ secure_asset('images/asojobhive_logo.png') }}" alt="asojobhive_logo" class="d-inline-block align-text-top w-100">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,8 +26,8 @@
                 <input id="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="keyword" autocomplete="off" />
                 <button class="btn btn-outline-light" type="submit">Search</button>
             </form>
-            <script src="{{ asset('js/app.js') }}"></script>
-            <script src="{{ asset('js/search.js') }}"></script>
+            <script src="{{ secure_asset('js/app.js') }}"></script>
+            <script src="{{ secure_asset('js/search.js') }}"></script>
             <form action="{{ route('logout') }}" method="POST" style="padding-left:1rem;">
                 @csrf
                 <button class="btn btn-danger btn-gradient">ログアウト</button>
